@@ -55,12 +55,7 @@ public class Test01 {
 		 * 
 		 */
 
-		int n = 1;
-		while (n <= 5) {
-			System.out.println("Hello");
-			n = n + 1;
-		}
-
+		
 	}
 
 }
