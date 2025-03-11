@@ -111,11 +111,12 @@ public class Day3 {
 
 		// 랜덤수가 숫자가 몇번 나왔는지
 		// 10번 돌려서 내가 입력한 숫자 나오게 하는거랑 하이스코어 만들기
-		Random rd = new Random(); 
+
+		Random rd = new Random();
 		Scanner sc = new Scanner(System.in);
 
 		int arr[] = new int[10];
-		
+
 		int high = 0;
 		int score = 100;
 		int count = 0;
@@ -123,50 +124,56 @@ public class Day3 {
 		int rdNum = rd.nextInt(10) + 1;
 		System.out.println("수를 입력해주세요.");
 
-		for (int i = 0;i<=x+10; i++) {
+		while (true) {
 
 			count++;
 			int n = sc.nextInt();
-			
-			
-			if (x <= 10)
-				if (rdNum == n) {
-					System.out.println(x + "번째.");
-					System.out.println(count + "번째 만에 맞혔습니다.");
-					System.out.println(score + "점수입니다.");
-					arr[x-1] = score;
-					count = 0;
-					score = 100;
-					
-					x++;
-				
-				} else {
-					score = score - 1;
-					if (rdNum > n) {
-						System.out.println("더 큰 수를 입력하세요.");
 
-					} else
-						System.out.println("더 작은 수를 입력하세요.");
-				}
-			System.out.println(arr[i]);
-		
-			
-			
+			if (rdNum == n) {
+				System.out.println(x + "번째.");
+				System.out.println(count + "번째 만에 맞혔습니다.");
+				System.out.println(score + "점수입니다.");
+				arr[x - 1] = score;
+				count = 0;
+				score = 100;
+
+				x++;
+
+				System.out.println(high + "점수입니다.");
+				break;
+			} else {
+				score = score - 1;
+				if (rdNum > n) {
+					System.out.println("더 큰 수를 입력하세요.");
+
+				} else
+					System.out.println("더 작은 수를 입력하세요.");
+			}
+		} // while문
+
+		System.out.println("계속하시겠습니까?(예 : 1, 아니요 : 2)");
+		int ans = sc.nextInt();
+		if (ans == 0) {
+			break;
 		}
-		
-		int[] A = { 1, 11, 3, 4, 5, 6, 7, 8, 9, 10 };
-		// 배열안의 짝수가 몇개인지 홀수가 몇개인지
 
-		// 배열안의 최대값 구하기
-
-		// 배열안의 최소값 구하기
-
-		// 배열안에 3의 배수가 몇개인가?
-
-		// 배열안의 총합구하기
-
-		// 배열안의 평균구하기
-
+		/*
+		 * int[] A = { 1, 11, 3, 4, 5, 6, 7, 8, 9, 10 }; // 배열안의 짝수가 몇개인지 홀수가 몇개인지 int
+		 * count1 =0; int count2 =0; for (int i = 0; i < 10; i++) { if (A[i] % 2 == 0) {
+		 * count1++; } if (A[i] % 2 == 1) { count2++; } }
+		 * System.out.println("짝수는 : "+count1); System.out.println("홀수는 : "+count2);
+		 * 
+		 * // 배열안의 최대값 구하기 int max = A[0]; for (int i = 1; i < 10; i++) { if(A[i]>max) {
+		 * max = A[i]; } } System.out.println("최대값은 : "+max); // 배열안의 최소값 구하기 int min =
+		 * A[0]; for (int i = 1; i < 10; i++) { if(A[i]<min) { min = A[i]; } }
+		 * System.out.println("최소값은 : "+min); // 배열안에 3의 배수가 몇개인가? int count3 = 0; for
+		 * (int i = 0; i < 10; i++) { if(A[i]%3==0) { count3++; } }
+		 * System.out.println("3의배수의 갯수는 : "+count3); // 배열안의 총합구하기 int sum = 0; for
+		 * (int i = 0; i < 10; i++) { sum += A[i]; }
+		 * System.out.println("배열안의 총합은 : "+sum); // 배열안의 평균구하기 int sum1 = 0; for (int i
+		 * = 0; i < 10; i++) { sum1 += A[i]; }
+		 * System.out.println("배열안의 평균은 : "+sum1/10);
+		 */
 	}
 
 }
