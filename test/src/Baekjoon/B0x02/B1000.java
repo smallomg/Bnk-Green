@@ -1,8 +1,8 @@
-package Baekjoon;
+package Baekjoon.B0x02;
 
 import java.util.Scanner;
 
-public class Baekjoon1000 {
+public class B1000 {
 
 	public static void main(String[] args) {
 		

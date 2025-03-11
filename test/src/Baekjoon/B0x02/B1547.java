@@ -1,8 +1,8 @@
-package Baekjoon;
+package Baekjoon.B0x02;
 
 import java.util.Scanner;
 
-public class Baekjoon1547 {
+public class B1547 {
 
 	public static void main(String[] args) {
 

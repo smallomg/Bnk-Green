@@ -1,6 +1,6 @@
-package Baekjoon;
+package Baekjoon.B0x02;
 
-public class Baejoon10171 {
+public class B10171 {
 
 	public static void main(String[] args) {
 		
