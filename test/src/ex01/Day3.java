@@ -123,7 +123,7 @@ public class Day3 {
 		 * while (true) {
 		 * 
 		 * count++; int n = sc.nextInt();
-		 * 
+		 * s
 		 * if (rdNum == n) { System.out.println(x + "번째."); System.out.println(count +
 		 * "번째 만에 맞혔습니다."); System.out.println(score + "점수입니다."); arr[x - 1] = score;
 		 * count = 0; score = 100;
