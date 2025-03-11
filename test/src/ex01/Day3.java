@@ -112,51 +112,32 @@ public class Day3 {
 		// 랜덤수가 숫자가 몇번 나왔는지
 		// 10번 돌려서 내가 입력한 숫자 나오게 하는거랑 하이스코어 만들기
 
-		Random rd = new Random();
-		Scanner sc = new Scanner(System.in);
-
-		int arr[] = new int[10];
-
-		int high = 0;
-		int score = 100;
-		int count = 0;
-		int x = 1;
-		int rdNum = rd.nextInt(10) + 1;
-		System.out.println("수를 입력해주세요.");
-
-		while (true) {
-
-			count++;
-			int n = sc.nextInt();
-
-			if (rdNum == n) {
-				System.out.println(x + "번째.");
-				System.out.println(count + "번째 만에 맞혔습니다.");
-				System.out.println(score + "점수입니다.");
-				arr[x - 1] = score;
-				count = 0;
-				score = 100;
-
-				x++;
-
-				System.out.println(high + "점수입니다.");
-				break;
-			} else {
-				score = score - 1;
-				if (rdNum > n) {
-					System.out.println("더 큰 수를 입력하세요.");
-
-				} else
-					System.out.println("더 작은 수를 입력하세요.");
-			}
-		} // while문
-
-		System.out.println("계속하시겠습니까?(예 : 1, 아니요 : 2)");
-		int ans = sc.nextInt();
-		if (ans == 0) {
-			break;
-		}
-
+		/*
+		 * Random rd = new Random(); Scanner sc = new Scanner(System.in);
+		 * 
+		 * int arr[] = new int[10];
+		 * 
+		 * int high = 0; int score = 100; int count = 0; int x = 1; int rdNum =
+		 * rd.nextInt(10) + 1; System.out.println("수를 입력해주세요.");
+		 * 
+		 * while (true) {
+		 * 
+		 * count++; int n = sc.nextInt();
+		 * 
+		 * if (rdNum == n) { System.out.println(x + "번째."); System.out.println(count +
+		 * "번째 만에 맞혔습니다."); System.out.println(score + "점수입니다."); arr[x - 1] = score;
+		 * count = 0; score = 100;
+		 * 
+		 * x++;
+		 * 
+		 * System.out.println(high + "점수입니다."); break; } else { score = score - 1; if
+		 * (rdNum > n) { System.out.println("더 큰 수를 입력하세요.");
+		 * 
+		 * } else System.out.println("더 작은 수를 입력하세요."); } } // while문
+		 * 
+		 * System.out.println("계속하시겠습니까?(예 : 1, 아니요 : 2)"); int ans = sc.nextInt(); if
+		 * (ans == 0) { break; }
+		 */
 		/*
 		 * int[] A = { 1, 11, 3, 4, 5, 6, 7, 8, 9, 10 }; // 배열안의 짝수가 몇개인지 홀수가 몇개인지 int
 		 * count1 =0; int count2 =0; for (int i = 0; i < 10; i++) { if (A[i] % 2 == 0) {
