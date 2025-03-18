@@ -13,6 +13,7 @@ public class B2440 {
 				System.out.print("*");
 			}
 			System.out.println();
+			
 		}
 	}
 
