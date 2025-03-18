@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+</head>
+<H1>Position 속성 사용하기</H1>
+<h2>1. static(기본값)
+    요소가 일반적인 문서흐름에 따라 배치됨</h2>
+<h2>2. relative(상대위치)
+    top, right, left, botton 속성을 이용해서 위치를 조정.</h2>
+<h2>3. absolute(절대 위치)
+    가장 가까운 부모요소를 기준으로 배치됨.
+    (부모요소의 position 속성이 relative)</h2>
+<h2>4. fixed(고정 위치)
+    뷰포트(브라우저 화면)를 기준으로 배치됨.
+    </h2>
+    <br>
+    <style>
+    *{
+        margin: 0;
+    }
+    .item{
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 100px;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .orange{
+        background-color: orange;
+    }
+    header{
+        height: 100px;
+        text-align: center;
+    }
+
+    .container{
+
+        width: 600px;
+        height: 400px;
+        background-image: linear-gradient(90deg,rgba(0,0,0,0.2)1px,transparent 1px),
+                          linear-gradient(0deg,rgba(0,0,0,0.2)1px,transparent 1px);
+        background-size: 100px 100px;
+    }
+    #d2{
+        position: relative;
+        left: 500px;
+        bottom: 100px;
+    }
+    #d3{
+        position: relative;
+        top: 100px;
+    }
+    #d4{
+        position: relative;
+        left: 500px;
+    }
+    #d5{
+        position: fixed;
+        top: 400px;
+        left: 200px;
+    }
+    </style>
+<body>
+    <header><h1>Position 실습</h1></header>
+    <div class="container">
+        <div id ="d1"class="item yellow">d1</div>
+        <div id ="d2"class="item red">d2</div>
+        <div id ="d3"class="item green">d3</div>
+        <div id ="d4"class="item blue">d4</div>
+        <div id ="d5"class="item orange">d5</div>
+    </div>
+</body>
+</html>
