@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .div3 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: red;
+        }
+
+        .div4 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: green;
+        }
+
+        #div5 {
+            color: white;
+        }
+    </style>
+</head>
+<!--1.div 태그의 사이즈를 너비 100px, 높이 100px이 되게 하시오.
+    2.div 태그의 테두리를 1px, 실선, 검정색으로 설정하시오.
+    3.div 태그중 텍스트가 1,2,3인 div에 대해 배경색을 빨강으로 하시오.
+    4.div 태그중 텍스트가 4,5,6인 div에 대해 배경색을 녹색으로 하시오.
+    5.div 태그중 텍스트가 5인 div에 대해 배경색을 흰색으로 하시오. -->
+
+<body>
+    <p>1.div 태그의 사이즈를 너비 100px, 높이 100px이 되게 하시오.</p>
+    <div id="div1">1번</div>
+
+    <p>2.div 태그의 테두리를 1px, 실선, 검정색으로 설정하시오.</p>
+    <div id="div2">2번</div>
+
+    <p>3.div 태그중 텍스트가 1,2,3인 div에 대해 배경색을 빨강으로 하시오.</p>
+    <div class="div3">1</div>
+    <div class="div3">2</div>
+    <div class="div3">3</div>
+
+    <p>4.div 태그중 텍스트가 4,5,6인 div에 대해 배경색을 녹색으로 하시오.</p>
+    <p>5.div 태그중 텍스트가 5인 div에 대해 배경색을 흰색으로 하시오.</p>
+    <div class="div4">4</div>
+    <div id="div5" class="div4">5</div>
+    <div class="div4">6</div>
+</body>
+
+</html>
