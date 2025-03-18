@@ -2,7 +2,7 @@ package ex01;
 
 import java.util.Scanner;
 
-public class function {
+public class Function1 {
 
 	public static void main(String[] args) {
 		// 숫자를 입력하세요 >>
@@ -31,6 +31,15 @@ public class function {
 
 		/* linePrint(10, 'A'); */
 
+		/*
+		 * 함수를 만든다 
+		 * 함수를 사용한다. 호출한다 
+		 * 함수를 호출하는 쪽에서...
+		 */
+		/*
+		 * System.out.println("hello1"); int x = f2(); System.out.println("hello2");
+		 */
+		
 		int result = su1(10);
 
 		if (result == 0) {
@@ -38,6 +47,7 @@ public class function {
 		} else {
 			System.out.print("홀수");
 		}
+		
 	}
 
 	/*
@@ -51,6 +61,13 @@ public class function {
 	 * }
 	 */
 
+	/*
+	 * public static void f(int n) { int i =0; while(i<n) {
+	 * System.out.println("========================"); i++; } }
+	 * 
+	 * static int f2() { f(10); return 10; }
+	 */
+	
 	static int su1(int n) {
 		if (n % 2 == 0) {
 
