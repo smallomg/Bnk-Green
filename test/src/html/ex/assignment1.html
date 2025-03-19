@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html의 레이아웃 태그</title>
+</head>
+<style>
+    header{
+        background-color: whitesmoke;
+        height: 60px;
+
+    }
+    aside{
+        background-color: pink;
+        width: 200px;
+        height: 300px;
+        float: left;
+    }
+    section{
+        background-color: yellow;
+        width: 600px;
+        height: 300px;
+        float: right;
+    
+    }
+    footer{
+        background-color: whitesmoke;
+        height: 60px;
+    }
+
+    #wrap{
+        width: 800px;
+        font-size: 20px;
+        text-align: center;
+        align-items: center;
+
+        margin: 0 auto;
+    }
+
+    #main{
+        display: flex;
+    }
+
+    h2{
+        text-align: left;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+</style>
+
+<body>
+    <div id ="wrap">
+        <h2>Html의 레이아웃 태그</h2>
+        <header>상단 헤더(header 태그)</header>
+        <div id="main">
+        <aside>사이드바 <br>(aside 태그)</aside>
+        <section>메인 콘텐츠(section 태그)</section>
+        </div>
+        <footer>하단 푸터(footer 태그)</footer>
+    </div>
+</body>
+</html>
