@@ -6,7 +6,7 @@ public class Vendingmachine {
 
 	public static void main(String[] args) {
 
-		/*
+		/* 문제
 		 * 관리자 모드	 		고객 모드 
 		 * 상품을 채움 			돈을 넣는다 
 		 * 돈을 채워 넣는다		 상품을 선택한다 
