@@ -11,7 +11,7 @@ public class Function7 {
 		// add sub mal div(실수)
 		// return값 다시 calc ㄱ
 		// 4개의 값을 전부 더한다!
-		// 총합을 구해서 그 값을 메인을 돌려주기 화면 출력
+		// 총합을 구해서 그 값을 메인을 돌려주기 화면 출력 1
 		
 
 		Scanner sc = new Scanner(System.in);
