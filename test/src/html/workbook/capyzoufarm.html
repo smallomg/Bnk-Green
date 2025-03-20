@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/capyzoufarm.css">
+</head>
+
+<style>
+    body {
+        background-image: url(../images/bg.png);
+        font-size: 16px;
+        font-family: "Verdana", "Apple SD Gothic Neo", "NanumGothic";
+        color: #333333;
+    }
+
+    header {
+        width: 1240px;
+        margin: 0 auto 44px;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px 0 10px;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: center;
+        /*rgba(빨강, 녹색, 파랑, 투명도)*/
+        background-color: rgba(255, 255, 255, 0.42);
+        padding: 12px 0 10px;
+        border-top: 2px solid #7c5d48;
+        border-bottom: 2px solid #7c5d48;
+    }
+
+    header nav ul li {
+        margin: 0 20px;
+    }
+
+    header nav ul li a {
+        font-size: 22px;
+        font-weight: bold;
+        color: #7c5d48;
+    }
+
+    header nav ul li a:hover {
+        text-decoration: underline double;
+    }
+
+
+    /*본문*/
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        width: 1240px;
+        margin: 0 auto 50px;
+    }
+
+    main {
+        flex-basis: 920px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 62px 72px 32px 72px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    }
+
+
+    /*부가내용*/
+    aside {
+        flex-basis: 204px;
+    }
+
+    aside nav {
+        border-radius: 16px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+        padding: 24px 28px;
+        margin-bottom: 24px;
+    }
+
+    aside nav h2 {
+        margin-bottom: 18px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #7c5d48;
+    }
+
+    aside nav ul {
+        font-size: 14px;
+    }
+
+    .categoryNav ul li {
+        list-style-type: none;
+        color: #7c5d48;
+        margin: 0 0 16px 20px;
+    }
+
+    .categoryNav ul li a {
+        color: #333333;
+    }
+
+    .recentNav ul li {
+        border-bottom: 1px solid #7c5d48;
+        padding-bottom: 10px;
+        margin-bottom: 22px;
+    }
+
+    .recentNav ul {
+        height: 240px;
+        overflow: hidden scroll;
+    }
+
+    .postdate {
+        margin-bottom: 20px;
+    }
+
+    .postdate span {
+        background-color: #91c777;
+        border-radius: 0 22px 22px 22px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 11px 23px 10px 18px;
+        display: inline-block;
+    }
+
+    .eyecatch {
+        margin-bottom: 20px;
+    }
+
+    article h2 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    article h3 {
+        border-bottom: 2px solid #6ab547;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: url(../images/h2_icon.png);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        padding: 20px 10px 10px 48px;
+    }
+
+    article section p {
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    article section {
+        margin-bottom: 50px;
+    }
+
+    footer {
+        background-color: #523f2e;
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 10px 20px;
+    }
+</style>
+
+<body>
+    <header>
+        <!--머리말 내용-->
+        <h1><img src="../images/logo.png" alt="로고"></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Content</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div>
+        <main>
+            <article>
+                <!--중심 내용-->
+                <h2>당근 농장의 하루를 소개합니다</h2>
+                <p class="postdate">
+                    <span>3023넌 8월 8일 오후 1시 13분</span>
+                </p>
+                <p class="eyecatch">
+                    <img src="../images/eyecatch.png" alt="한눈에 보기">
+                </p>
+
+                <section>
+                    <h3>6:00- 당근 수확과 아침 식사</h3>
+                    <p>아침에는 6시쯤 일어납니다 언제까지나 이불 속에 파묻혀있고 싶지만,
+                        영차! 하고 힘내서 일어납니다.
+                    </p>
+                    <p>그 다음 잘 여문 당근을 수확합니다.<br>
+                        못난이 당근은 제가 아침밥으로 먹습니다.<br>
+                        수확을 하면서 아침도 해결할수 있어서 무척 효율적입니다
+                    </p>
+                    <figure>
+                        <img src="../images/carrots.png" alt="못난이 당근">
+                        <figcaption>모양 못생겨서 내가 먹은 당근들</figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h3>8:30 ~ 12:30 슈퍼마켓이나 휴게소로 출하</h3>
+                    <p>아침에는 캔 당근을 산지 직송 매장으로 운반합니다. 일과 중 가장 힘을
+                        써야하는 하는 일이네요
+                    </p>
+                    <p>슬슬 리어카가 아니라 전기로 움직이는 차를 구입해볼까 생각하고 있어요.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>12:30 ~ 18:30 밭일과 저녁 식사</h3>
+                    <p>당근의 상태를 보면서 물을 주거나, 벌레를 잡거나, 비닐을 씌우거나 합니다.
+                    </p>
+                    <p>
+                        지금은 당근이 애인이지만, 장기적으로 더 많은 작물을
+                        키우고 싶어서 관련 준비도 같이 하고 있습니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>18:30 ~ 목욕과 취침</h3>
+                    <p>느긋하게 목욕을 하고 잠자리에 듭니다. 이불 속은 천국입니다.</p>
+                </section>
+            </article>
+        </main>
+
+
+        <aside>
+            <!--부가 내용-->
+            <nav class="catagoryNav">
+                <h2>Category</h2>
+                <ul>
+                    <li><a href="#">농가의 일상</a></li>
+                    <li><a href="#">채소 재배 노하우</a></li>
+                    <li><a href="#">카피조우 레시피</a></li>
+                    <li><a href="#">농장 경영</a></li>
+                </ul>
+            </nav>
+
+            <nav class="recentNav">
+                <h2>Recent Articles</h2>
+                <ul>
+                    <li><a href="#">온실 재배 주의할 점 TOP10</a></li>
+                    <li><a href="#">현역 농부가 해충 퇴치법을 알려들립니다</a></li>
+                    <li><a href="#">집에서도 가능! 화분 재배의 핵심</a></li>
+                    <li><a href="#">간단하게 만드는 당근 요리 소개!</a></li>
+                    <li><a href="#">농사자여서 먹고 살 수 있을까? 제일 궁금해하는 연수입 대공개</a></li>
+                    <li><a href="#">안녕하세요 Farm CaptZou입니다.</a></li>
+                </ul>
+            </nav>
+
+            <img src="../images/side_banner.png" alt="배너">
+        </aside>
+    </div>
+
+    <footer>
+        <!--바닥 글-->
+        <p><small>ⓒ 3023 Farm Capyzou</small></p>
+    </footer>
+</body>
+
+</html>
