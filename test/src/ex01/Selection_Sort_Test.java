@@ -6,7 +6,7 @@ public class Selection_Sort_Test {
 		
 		int arr[] = {1,2,3,4,5,6,7};
 		
-		int n = 3;
+		int n = 5;
 		
 		double d;
 		
@@ -39,6 +39,10 @@ public class Selection_Sort_Test {
 			}
 			System.out.print("n의 값은 "+n);
 		}
+		
+		
+		
+		
 	}
 
 }
