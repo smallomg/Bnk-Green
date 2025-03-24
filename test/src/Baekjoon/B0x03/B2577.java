@@ -52,12 +52,20 @@ public class B2577 {
 				two++;
 			}
 			if (arr[i] == 3) {
-				int zero = 0;
-				zero++;
+				int three = 0;
+				three++;
 			}
 			if (arr[i] == 4) {
 				int four = 0;
 				four++;
+			}
+			if (arr[i] == 4) {
+				int five = 0;
+				five++;
+			}
+			if (arr[i] == 4) {
+				int six = 0;
+				six++;
 			}
 		}
 	}
