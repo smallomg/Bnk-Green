@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    li {
+        list-style-type: none;
+    }
+    
+    #d1 {
+      
+        width: 1050px;
+        padding: 10px;
+        background-color: blue;
+    }
+
+    header {
+        margin: 10px;
+        font-size: 50px;
+        text-align: center;
+        width: 1000px;
+        height: 200px;
+        padding: 50px;
+        background-color: whitesmoke;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 10px;
+        width: 1000px;
+        height: 200px;
+        
+    }
+
+    aside {
+        
+        padding: 20px;
+        width: 250px;
+        height: 200px;
+        background-color: whitesmoke;
+    }
+
+    section {
+        margin-left: 10px;
+        padding: 20px;
+        width: 740px;
+        height: 200px;
+        background-color: whitesmoke;
+    }
+
+    footer {
+        margin: 10px;
+        width: 1000px;
+        height: 200px;
+        background-color: whitesmoke;
+    }
+</style>
+
+<body>
+    <div id="d1">
+    <header>
+        <h2>My Header</h2>
+    </header>
+
+    <main>
+        <aside>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li> <a href="#">Link 3</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <h2>Lorem Ipsum</h2><br>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit nisl laoreet facilisis aliquet.
+                Potenti dignissim litora eget montes rhoncus sapien neque urna. Cursus libero sapien integer magnis
+                ligula lobortis quam ut.</p>
+        </section>
+    </main>
+
+    <footer>
+        Footer
+    </footer>
+</div>
+</body>
+
+</html>
