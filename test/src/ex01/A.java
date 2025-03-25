@@ -1,7 +1,9 @@
 package ex01;
 
 public class A {
-	int n;
+	//public 외부사용가능
+	//private 접근 불가
+	public int n;
 	String s;
 
 	void f() {
