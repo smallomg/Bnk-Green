@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNK부산은행</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Spoqa', 'noto', '돋움', Dotum, Helvetica,
+            AppleGothic, Sans-serif !important;
+    }
+
+    header {
+
+        height: 124px;
+
+    }
+
+    a {
+        color: black;
+        text-decoration-line: none;
+        font-family: 'Spoqa', 'noto', '돋움', Dotum, Helvetica,
+            AppleGothic, Sans-serif !important;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+
+
+    #wrap {
+        min-width: 1200px;
+    }
+
+    .box {
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+
+
+    }
+
+    /*header 앞*/
+    #headnav {
+        vertical-align: middle;
+        width: 100%;
+        height: 140px;
+
+        border-bottom: 2px solid #cb2b11;
+        box-sizing: border-box;
+    }
+
+    #button1 {
+        width: 90px;
+        height: 32px;
+        padding-left: 30px;
+        border: 1px solid #e0e0e1;
+        border-radius: 4px;
+        color: #000;
+        font-size: 12px;
+        text-align: left;
+        text-indent: 0;
+        cursor: pointer;
+        background: url(/test/src/html/images/icon_search.png) no-repeat 10px center / 16px 16px;
+    }
+
+    #button2 {
+        width: 90px;
+        height: 32px;
+        padding-left: 30px;
+        border: 1px solid #e0e0e1;
+        border-radius: 4px;
+        color: #000;
+        font-size: 12px;
+        text-align: left;
+        text-indent: 0;
+        cursor: pointer;
+        background: url(/test/src/html/images/menu_icon.png) no-repeat 10px center / 16px 16px;
+    }
+
+    #logo {
+        padding-top: 74px;
+        float: left;
+    }
+
+    #menu {
+        padding-top: 7px;
+        float: right;
+        text-align: right;
+        position: relative;
+        left: 333px;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #top_menu li {
+        position: relative;
+        right: 350px;
+        /* border 1px solid red */
+    }
+
+    #main_menu {
+        position: relative;
+        right: 600px;
+
+    }
+
+    #main_menu li {
+        margin: 45px 0 0 80px;
+        font-weight: bold;
+        font-size: 20px;
+        /* border: 1px solid red */
+    }
+
+    #but {
+        right: 350px;
+        position: relative;
+        bottom: 28px;
+        display: inline;
+    }
+
+    #top_menu a {
+
+        color: #424242;
+
+    }
+
+    #top_menu a:hover {
+        text-decoration-line: underline;
+        color: #424242;
+
+    }
+
+    #main_menu a {
+        color: #212121;
+
+    }
+
+    #main_menu a:hover {
+        text-decoration-line: underline;
+        color: #212121;
+    }
+
+    /*header 끝*/
+
+
+    /*main 시작*/
+    main {
+        display: block;
+        unicode-bidi: isolate;
+    }
+
+    .main_content {
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+
+    }
+
+    #main_con {
+        display: flex;
+    }
+
+    #imgs {
+        padding-top: 32px;
+        width: 800px;
+        height: 280px;
+    }
+
+    #main_area {
+
+        position: relative;
+        top: 20px;
+        border-radius: 8px;
+        background-color: #cb2b11;
+        padding-top: 16px;
+        margin: 10px;
+        width: 180px;
+        height: 134px;
+        text-align: right;
+        line-height: 1.4;
+        float: right;
+        padding: 89px 24px 0 0;
+
+    }
+
+    #main_area a {
+        display: inline-block;
+        color: #fff;
+        font-weight: bold;
+        font-size: 17px
+    }
+
+    #bar_ul {
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #bar_li {
+        width: 170px;
+        height: 130px;
+        display: grid;
+        text-align: center;
+    }
+
+    #bar_li p {
+        color: black;
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    #bar_li span {
+        color: #424242;
+        font-size: 14px;
+    }
+
+    #new,
+    #event,
+    #other {
+
+        margin-top: 50px;
+        margin-right: 30px;
+        float: left;
+        width: 300px;
+
+    }
+
+    #new ul {
+        margin-top: 20px;
+    }
+
+    #event ul {
+        margin-top: 20px;
+
+    }
+
+
+
+    #other li {
+        float: left;
+        width: calc(100% / 2);
+        padding: 5px;
+    }
+
+    #other a {
+        display: table-cell;
+        text-align: center;
+        width: 150px;
+        height: 60px;
+        padding: 5px 10px;
+        border: 1px solid #e0e0e1;
+        border-radius: 8px;
+        font-size: 13px;
+        color: #000;
+        line-height: 1.35;
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+
+    /*main 끝*/
+
+    /*footer 시작*/
+    #ft {
+        margin-top: 30px;
+        float: left;
+        display: flex;
+    }
+
+    #ft li {
+        font-size: 12px;
+        width: auto;
+    }
+
+    #hrr {
+        vertical-align: middle;
+        width: 100%;
+        height: 140px;
+
+        border-top: 2px solid black;
+        box-sizing: border-box;
+    }
+    .copy{
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+
+        bottom: 40px;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+
+        <header>
+            <div id="headnav">
+                <div class="box">
+                    <div id="logo">
+                        <img src="../html/images/bnk_logo.png" style="width:132px; height:21px;" />
+                    </div>
+                    <nav id="menu">
+                        <ul id="top_menu">
+                            <li><a href="#">로그인</a></li>
+                            <li>|</li>
+                            <li><a href="#">인증소개</a></li>
+                            <li>|</li>
+                            <li><a href="#">은행소개</a></li>
+                            <li>|</li>
+                            <li><a href="#">Global</a></li>
+                        </ul>
+                        <ul id="main_menu">
+                            <li><a href="#">개인뱅킹</a></li>
+                            <li><a href="#">기업뱅킹</a></li>
+                            <li><a href="#">금융상품</a></li>
+                        </ul>
+                        <div id="but">
+                            <li><button id="button1">검색하기</button></li>
+                            <li><button id="button2">전체메뉴</button></li>
+                        </div>
+                    </nav>
+                </div>
+        </header>
+
+        <main>
+            <div class="main_content">
+                <div id="main_con">
+                    <div id="imgs">
+                        <img src="../html/images/bnk_main.PNG" style="width: 800px; height:280px;">
+
+                    </div>
+                    <div id="#">
+                        <div id="main_area">
+                            <a href="#">빠른조회서비스</a>
+                        </div>
+                        <div id="main_area">
+                            <a href="#">사고분실신고</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_content">
+                <ul id="bar_ul">
+                    <li class="bar_li">
+                        <a href="#">
+                            <img src="images/ico_gomenu_1.png">
+                            <p>베스트상품</p>
+                            <span>온라인판매TOP5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/ico_gomenu_2.png">
+                            <p>목적별상품</p>
+                            <span>상황에 맞는 자금 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/ico_gomenu_3.png">
+                            <p>생애주기별상품</p>
+                            <span>청소년기와 함께 해야하는</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/ico_gomenu_4.png">
+                            <p>고객별상품</p>
+                            <span>유아기부터 은퇴설계까지</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/ico_gomenu_5.png">
+                            <p>신규상품</p>
+                            <span>최근6개월이내출시</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="main_content" style="height:350px">
+                <div id="new">
+                    <h2><a href="#">새소식</a></h2>
+                    <ul>
+                        <li><a href="#">BNK부산은행 전문계약직(이코노미스트/파생상품 세일즈/사은품 MD) 채용공고</a></li>
+                        <li><a href="#">롯데자이언츠 승리기원예금 및 적금(BNK가을야구정기예금 및 적금) 출시 안내</a></li>
+                        <li><a href="#">표준지방세정보시스템 및 위택스 서비스가 일시중단 안내</a></li>
+                        <li><a href="#">폐업업체 OTP 서비스 종료(이용 불가) 안내</a></li>
+                        <li><a href="#">마이존체크카드 외 4종 약관 개정 안내</a></li>
+                        <li><a href="#">거치식예금 금리 변경 안내</a></li>
+                    </ul>
+                </div>
+                <div id="event">
+                    <h2><a href="#">이벤트</a></h2>
+                    <ul>
+                        <li><a href="#">봄이니까, 부산은행 연금계좌 바꿔봄</a></li>
+                        <li><a href="#">외화현찰 배달서비스 이벤트</a></li>
+                        <li><a href="#">웰스타고객을 위한 Up-Grade프로그램 이벤트</a></li>
+                        <li><a href="#">윈덤그랜드부산 봄맞이 객실패키지 이벤트</a></li>
+                        <li><a href="#">경복궁면세점 김해공항점 마이태그하고 할인받자!</a></li>
+                        <li><a href="#">BNK 카드 X 페이북 여행 할인</a></li>
+                    </ul>
+                </div>
+                <div id="other">
+                    <ul>
+                        <li>
+                            <a href="#">상품공시실</a>
+                        </li>
+                        <li>
+                            <a href="#">서식/약관/자료실</a>
+                        </li>
+                        <li>
+                            <a href="#">소비자정보포털</a>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="#">비교조회서비스</a>
+                        </li>
+                        <li>
+                            <a href="#">서면금융</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div id="hrr">
+                <div class="box">
+                    <ul id="ft">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">경영공시</a></li>
+                        <li><a href="#">고객정보취급방침</a></li>
+                        <li><a href="#">보호금융상품등록부</a></li>
+                        <li><a href="#">상품공시실</a></li>
+                        <li><a href="#">전자민원접수</a></li>
+                        <li><a href="#">전자금융이용자보호수칙</a></li>
+                        <li><a href="#">전자금융사기피해금환급제도</a></li>
+                        <li><a href="#">위치기반서비스 이용약관</a></li>
+                    </ul>
+                    <ul id="ft"style="font-weight:bold">
+                        <li><a href="#">고객상담 1588-6200, 1544-6200</a></li>
+                        <li><a href="#">|</a></li>
+                        <li><a href="#">해외 82-2-1588-6200</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="copy">
+                    <small>COPYTRIGHT ⓒ 2014 BUSANBANK. ALL RIGHTS RESERVED.</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
