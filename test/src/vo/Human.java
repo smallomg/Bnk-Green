@@ -1,5 +1,7 @@
 package vo;
-
+//번호가 있음 인스턴스 생성할때 자동으로 고유번호 부여
+//실행 클래스 메인 
+//메모리에 인간이 몇개 만들어 졌는지 확인하는 기능
 public class Human {
 	private String name; // 이름
 	private int age; // 나이
