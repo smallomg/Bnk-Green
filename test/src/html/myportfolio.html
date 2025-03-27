@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PortFolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+    #foreword{
+            background-color: aqua;
+            color: black;
+            text-align: center;
+            padding: 80px 0;
+    }
+
+    header {
+        height: 700px;
+        /* border: 1px solid black; */
+    }
+
+    .head {
+        margin-top: 100px;
+        height: 600px;
+        /* border: 1px solid orange; */
+    }
+
+    .introduction {
+
+
+        width: 1200px;
+        height: 600px;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+    .intro {
+        display: flex;
+        width: 1200px;
+        height: 420px;
+        /* border: 1px solid blue; */
+    }
+
+    #introduction_img {
+        /* border: 1px solid blue; */
+        height: 400px;
+        width: 400px;
+    }
+
+    .introduction img {
+        height: 400px;
+        width: 400px;
+        border-radius: 80%;
+        /* border: 1px solid blue; */
+    }
+
+        .info {
+
+        margin-left: 50px;
+        width: 700px;
+        height: 430px;
+        /* border: 1px solid blueviolet; */
+    }
+
+    .info td {
+        background-color: white;
+        border-radius: 8px;
+        /* border: 1px solid blueviolet; */
+        font-size: 24px;
+        text-align: center;
+        width: 200px;
+        height: 130px;
+    }
+
+    .writing {
+        margin: 0 auto;
+        margin-top: 20px;
+
+        width: 700px;
+        height: auto;
+
+        font-size: 20px;
+        /* border: 1px solid salmon; */
+    }
+
+    .content {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        /* border: 1px solid black; */
+    }
+
+    .stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-around;
+        /* border: 1px solid blue; */
+    }
+
+    .tac {
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        width: 300px;
+        height: 200px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 80px;
+        /* border: 1px solid orange; */
+    }
+
+    .tac:hover {
+        background-color: white;
+    }
+
+    .center {
+        font-size: 50px;
+        /* border: 1px solid red; */
+    }
+
+
+    .project{
+        /* border: 1px solid red; */
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .project:hover{
+        background-color: whitesmoke;
+    }
+    .pro_img img{
+        width: 100%;
+        
+    }
+    .exp{
+        text-align: center;
+        /* border: 1px solid orangered; */
+    }
+
+    footer{
+        padding: 40px 0;
+        text-align: center;
+        background-color: #bbb;
+        height: 100px;
+        /* border: 1px solid orangered; */
+    }
+</style>
+
+<body>
+    <div id="foreword">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Frontend & Backend Developer</p>
+    </div>
+    
+    <header>
+        <div class="head">
+            <div class="introduction">
+                <div class="intro">
+                    <div id="introduction_img">
+                        <img src="images/saram.jpg" alt="본인사진">
+                    </div>
+                    <div class="info">
+                        <table border="0">
+                            <tr>
+                                <td>이름</td>
+                                <td>내이름</td>
+                                <td>생년월일</td>
+                                <td>내 생년월일</td>
+                            </tr>
+                            <tr>
+                                <td>학력</td>
+                                <td>내 학력</td>
+                                <td>주소</td>
+                                <td>내 주소</td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td>내 내전화번호</td>
+                                <td>이메일</td>
+                                <td>내 이메일</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="writing">
+                    <p>나를 소개하는 글입니다
+                        나를 소개하는 글입니다
+                        나를 소개하는 글입니다
+                        나를 소개하는 글입니다
+                        나를 소개하는 글입니다
+                        나를 소개하는 글입니다
+                        나를 소개하는 글입니다</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="stack">
+                <div class="tac">
+                    <div class="center">html</div>
+                </div>
+                <div class="tac">
+                    <div class="center">css</div>
+                </div>
+                <div class="tac">
+                    <div class="center">java</div>
+                </div>
+                <div class="tac">
+                    <div class="center">react</div>
+                </div>
+                <div class="tac">
+                    <div class="center">next.js</div>
+                </div>
+                <div class="tac">
+                    <div class="center">mysql</div>
+                </div>
+                <div class="tac">
+                    <div class="center">git</div>
+                </div>
+                <div class="tac">
+                    <div class="center">c</div>
+                </div>
+                <div class="tac">
+                    <div class="center">c++</div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="pro_img">
+                    <img src="images/choco1.jpg" alt="pro1">
+                </div>
+                <div class="exp">
+                    <h3>
+                        나의 포트폴리오 1
+                    </h3>
+                    <p>
+                        포트폴리오 설명 1
+                    </p>
+                </div>
+                
+            </div>
+            <div class="project">
+                <div class="pro_img">
+                    <img src="images/choco2.jpg" alt="pro2">
+                </div>
+                <div class="exp">
+                    <h3>
+                        나의 포트폴리오 2
+                    </h3>
+                    <p>
+                        포트폴리오 설명 2
+                    </p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="pro_img">
+                    <img src="images/choco3.jpg" alt="pro3">
+                </div>
+                <div class="exp">
+                    <h3>
+                        나의 포트폴리오 3
+                    </h3>
+                    <p>
+                        포트폴리오 설명 3
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Copyright 2025ⓒ Web developer portfoli site lee dae young
+    </footer>
+</body>
+
+</html>

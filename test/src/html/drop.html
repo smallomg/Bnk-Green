@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop</title>
+</head>
+
+<style>
+    /* div{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+    }
+    #d1{
+        display: none;
+        background-color: pink;
+    }
+    #d2{
+        background-color: greenyellow;
+    } */
+
+    .menu:active .sub_menu{
+        display: block;
+    }
+    .sub_menu{
+        display: none;
+        position: absolute;
+        
+        background-color: orange;
+    }
+    .sub_menu ul{
+        list-style-type: none;
+        padding-left: 0px;
+    }
+    
+</style>
+
+<body>
+    <!-- <div id="d1">div 태그입니다</div>
+    <div id="d2">div 태그입니다</div> -->
+
+    <div class="menu">
+    <button class="menu_button">메뉴1</button>
+        <div class="sub_menu">
+            <ul>
+                <li>서브메뉴1</li>
+                <li>서브메뉴2</li>
+                <li>서브메뉴3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
