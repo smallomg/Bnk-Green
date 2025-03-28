@@ -402,3 +402,114 @@ footer p {
     자동으로 잘리게 하고 싶으면 object-fit*/
     object-fit: cover; 
 }
+
+
+
+/*CONTENT
+================================================*/
+#content{
+    background-image: url(images/contact-bg.jpg);
+    min-height: 100vh;
+}
+/* 입력 양식 
+================================================*/
+form div{
+    margin-bottom: 14px;
+}
+label{
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+    background: rgba(225, 225, 225, .5);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"]{
+    width: 100%;
+    max-width: 240px;
+}
+textarea{
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"]{
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* 가게 정보와 지도 
+========================================================*/
+#location{
+    padding: 4% 0;
+}
+#location .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.location-info{
+    width: 22%;
+}
+.location-info p{
+    padding: 12px 10px;
+}
+.location-map{
+    width: 74%;
+}
+
+/*iframe*/
+iframe{
+    width: 100%;
+}
+
+/*SNS
+==================================*/
+#sns{
+    background: #faf7f0;
+    padding: 4% 0;
+}
+#sns .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+#sns .sub-title{
+    margin-bottom: 30px;
+}
+.sns-box{
+    width: 30%;
+}
+
+
+@media(max-width:600px){
+    #content .page-title{
+        margin-top: 40px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        max-width:100px
+    }
+
+    /* 가게 정보와 지도 */
+    #location .wrapper,
+    #sns .wrapper{
+        flex-direction: column;
+    }
+    .location-info,
+    .location-map,
+    .sns-box{
+        width: 100%;
+    }
+    .sns-box{
+        margin-bottom: 30px;
+    }
+}
