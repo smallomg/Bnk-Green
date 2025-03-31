@@ -50,11 +50,12 @@
     .intro {
         display: flex;
         width: 1200px;
-        height: 420px;
+        height: 460px;
         /* border: 1px solid blue; */
     }
 
     #introduction_img {
+        margin-left: 40px;
         /* border: 1px solid blue; */
         height: 400px;
         width: 400px;
@@ -70,24 +71,40 @@
         .info {
 
         margin-left: 50px;
-        width: 700px;
-        height: 430px;
+        height: 460px;
         /* border: 1px solid blueviolet; */
     }
 
-    .info td {
-        background-color: white;
-        border-radius: 8px;
-        /* border: 1px solid blueviolet; */
-        font-size: 24px;
+
+    .info ul{
         text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .info li {
+        list-style-type: none;
+        background-color: white;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        /* border: 1px solid blueviolet; */
+        font-size: 28px;
+        font-weight: bold;
         width: 200px;
         height: 130px;
+    }
+    .info li:hover{
+        background-color: #333;
+        color: white;
+        transform: translateX(-5px);
+        box-shadow: 0 10px 30px rgba(0, 225, 225, 0.5);
     }
 
     .writing {
         margin: 0 auto;
-        margin-top: 20px;
+        margin-top: 70px;
 
         width: 700px;
         height: auto;
@@ -175,26 +192,20 @@
                         <img src="images/saram.jpg" alt="본인사진">
                     </div>
                     <div class="info">
-                        <table border="0">
-                            <tr>
-                                <td>이름</td>
-                                <td>내이름</td>
-                                <td>생년월일</td>
-                                <td>내 생년월일</td>
-                            </tr>
-                            <tr>
-                                <td>학력</td>
-                                <td>내 학력</td>
-                                <td>주소</td>
-                                <td>내 주소</td>
-                            </tr>
-                            <tr>
-                                <td>전화번호</td>
-                                <td>내 내전화번호</td>
-                                <td>이메일</td>
-                                <td>내 이메일</td>
-                            </tr>
-                        </table>
+                            <ul>
+                                <li>이름</li>
+                                <li>내 이름</li>
+                                <li>학력</li>
+                                <li>내 학력</li>
+                                <li>생년월일</li>
+                                <li>내 생년월일</li>
+                                <li>주소</li>
+                                <li>내 주소</li>
+                                <li>전화번호</li>
+                                <li>내 전화번호</li>
+                                <li>이메일</li>
+                                <li>내 이메일</li>
+                            </ul>
                     </div>
                 </div>
                 <div class="writing">
