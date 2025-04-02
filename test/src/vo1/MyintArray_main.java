@@ -3,15 +3,18 @@ package vo1;
 public class MyintArray_main {
 
 	public static void main(String[] args) {
-		
+
 		MyintArray ma = new MyintArray();
-		
-		ma.setArr(0,1);
-		ma.setArr(1,2);
-		ma.setArr(2,3);
-		ma.setArr(3,4);
-		ma.setArr(4,5);
+
+		ma.add(100);
 		ma.f();
+		ma.add(20);
+		ma.f();
+		ma.add(30);
+		ma.f();
+		ma.delete(3);
+		ma.f();
+
 	}
 
 }
