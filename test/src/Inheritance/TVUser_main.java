@@ -1,6 +1,6 @@
 package Inheritance;
 
-import java.util.Iterator;
+import java.util.Scanner;
 
 public class TVUser_main {
 
@@ -27,11 +27,24 @@ public class TVUser_main {
 		 * tvs[i].volumeUp(); tvs[i].volumeDown(); }
 		 */
 		
+		/*
+		 * BeanFactory factory = new BeanFactory(); TV tv3 = factory.getBean(1);//1이면
+		 * 삼성tv, 2이면 LGtv가 작동되게
+		 * 
+		 * tv3.powerOn(); tv3.powerOff(); tv3.volumeUp(); tv3.volumeDown();
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
 		BeanFactory factory = new BeanFactory();
-		TV tv3 = factory.getBean(1);//1이면 삼성tv, 2이면 LGtv가  작동되게
-		tv3.powerOn();
-		tv3.powerOff();
-		tv3.volumeUp();
+		
+		TV tv3 = factory.getBean(s); //samsung 넣으면 삼성티비나오게 
+		
+		tv3.powerOn(); 
+		tv3.powerOff(); 
+		tv3.volumeUp(); 
 		tv3.volumeDown();
+		
+		
 	}
 }
