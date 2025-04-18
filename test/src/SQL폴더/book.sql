@@ -1,0 +1,7 @@
+CREATE TABLE book(
+bno NUMBER(3) PRIMARY KEY,
+title VARCHAR2(20),
+writer VARCHAR2(10),
+publisher VARCHAR2(10),
+price NUMBER(8)
+);
