@@ -1,0 +1,12 @@
+package ex02.service;
+
+public class MemberService {
+
+	
+		
+		public void f() {
+			
+		}
+	
+
+}

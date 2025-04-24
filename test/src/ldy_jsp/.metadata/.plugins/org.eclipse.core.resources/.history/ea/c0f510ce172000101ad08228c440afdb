@@ -1,0 +1,9 @@
+package ex04;
+
+public class Board {
+String bno;
+String title;
+String content;
+String writer;
+String regdate;
+}

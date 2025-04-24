@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>Index Page</h1>
+	<hr>
+	?username=aaa;
+	<form action="req1.jsp" method="GET">
+		username : <input type="text" name="username"><br> 
+		age : <input type="text" name="age"><br> 
+		hobby : <input type="checkbox" name="hobbies" value="독서">독서
+		<input type="checkbox" name="hobbies"value="낚시">낚시
+		<input type="checkbox" name="hobbies"value="헬스">운동
+		<br> 
+		<input type="radio" name="gender" value="남">남
+		<input type="radio" name="gender" value="여">여
+		<br>
+		bgcolor : <select name ="bgcolor">
+		<option value="red">빨강</option>
+		<option value="blue">파랑</option>
+		</select>
+		<br>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

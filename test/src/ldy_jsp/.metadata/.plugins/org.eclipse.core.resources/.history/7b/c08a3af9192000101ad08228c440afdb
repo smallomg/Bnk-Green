@@ -1,0 +1,12 @@
+package ex04;
+
+import lombok.Data;
+
+@Data
+public class Board {
+Int bno;
+String title;
+String content;
+String writer;
+String regdate;
+}

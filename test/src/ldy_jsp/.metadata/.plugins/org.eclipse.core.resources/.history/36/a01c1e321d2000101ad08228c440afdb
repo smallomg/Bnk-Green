@@ -1,0 +1,15 @@
+package ex04;
+
+import java.time.LocalDate;
+
+import lombok.Data;
+
+
+@Data
+public class Board {
+int bno;
+String title;
+String content;
+String writer;
+LocalDate regdate;
+}

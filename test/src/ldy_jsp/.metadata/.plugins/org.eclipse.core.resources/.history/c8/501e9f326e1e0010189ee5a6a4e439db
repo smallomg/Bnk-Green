@@ -1,0 +1,59 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement;"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>Index Page</h1>
+	<hr>
+	<form action="req1.jsp" method="GET">
+		username : <input type="text" name="username"><br> age :
+		<input type="text" name="age"><br> hobby : <input
+			type="checkbox" name="hobbies" value="독서">독서 <input
+			type="checkbox" name="hobbies" value="낚시">낚시 <input
+			type="checkbox" name="hobbies" value="헬스">운동 <br> <input
+			type="radio" name="gender" value="남">남 <input type="radio"
+			name="gender" value="여">여 <br> bgcolor : <select
+			name="bgcolor">
+			<option value="red">빨강</option>
+			<option value="blue">파랑</option>
+		</select> <br> <a href="emp.jsp">상세페이지</a> <br> <a href="a.jsp">a
+			page 가기</a> <br> <input type="submit" value="전송">
+	</form>
+	<%
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+
+	String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+	String user = "green";
+	String password = "1234";
+
+	Connection con = DriverManager.getConnection(url, user, password);
+	Statement stmt = con.createStatement();
+
+	String query = "INSeRT INTO a_student VALUES(?,?,?,?,?,?,?,?)";
+
+	PreparedStatement pstmt = con.prepareStatement(query);
+	String param1 = request.getParameter("stu_no");
+	%>
+	<form action="a.jsp" method="GET">
+		stu_no : <input type="text" name="stu_no"><br> stu_name :
+		<input type="text" name="stu_name"><br> stu_dept : <input
+			type="text" name="stu_dept"><br> stu_grade : <input
+			type="text" name="stu_grade"><br> stu_class : <input
+			type="text" name="stu_class"><br> stu_gender : <input
+			type="text" name="stu_gender"><br> stu_height : <input
+			type="text" name="stu_height"><br> stu_weight : <input
+			type="text" name="stu_weight"><br> <input type="submit"
+			value="전송">
+	</form>
+</body>
+</html>

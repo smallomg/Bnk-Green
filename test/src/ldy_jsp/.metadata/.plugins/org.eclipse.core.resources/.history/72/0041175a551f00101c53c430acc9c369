@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    <%
+    String user1 = (String)request.getAttribute("user1");
+	String user2 = (String)request.getAttribute("user2");
+
+	if(user1=="바위"||"가위"||"보"){
+		if(user2=="바위"){
+			System.out.println("무승부");
+		}
+	}
+	
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

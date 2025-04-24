@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원등록 페이지</h1>
+<%@ include file="header.jsp"%>
+
+<form action="#"method="POST">
+<table border ="1">
+<tr>
+회원번호(자동발생)
+</tr>
+</table>
+
+회원성명
+회원전화
+회원주소
+가입일자
+고객등급[A:VIP,B:일반,C:직원]
+도시코드
+</form>
+</body>
+</html>

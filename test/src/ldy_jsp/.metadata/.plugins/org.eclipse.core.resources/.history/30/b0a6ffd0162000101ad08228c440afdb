@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="ex04.Member"%>
+<%@page import="java.util.List"%>
+    
+    <%
+Member member =(Member)session.getAttribute("member");
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<% if(member != null && member.getId() != null) { %>
+로그인 상태<br>
+ID : ${sessionScope.member.getId()} <br>
+PW : ${sessionScope.member.getPw()}<br>
+NAME : ${sessionScope.member.getName()}<br>
+GRADE : ${sessionScope.member.getGrade()}<br>
+<%}%>
+</body>
+</html>

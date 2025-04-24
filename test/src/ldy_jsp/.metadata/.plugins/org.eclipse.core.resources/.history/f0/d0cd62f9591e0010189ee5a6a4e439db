@@ -1,0 +1,25 @@
+package test;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Select_test {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public Select_test {
+		conn = DBcon.getConnection();
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

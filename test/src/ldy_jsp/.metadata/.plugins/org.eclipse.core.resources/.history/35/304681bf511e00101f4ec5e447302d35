@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	String param1 = request.getParameter("username");
+	String param2 = request.getParameter("age");
+	String param3 = request.getParameter("hobbies")
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REQ1 PAGE</title>
+</head>
+<body>
+	<h1>REQ1 Page</h1>
+	<hr>
+	username = <%= param1%> <br>
+	age = <%= param2%>
+</body>
+</html>

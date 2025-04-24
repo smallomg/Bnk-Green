@@ -1,0 +1,10 @@
+package ex06;
+
+@Data
+
+public class Join {
+	int custno;
+	String custname;
+	String grade;
+	int price;
+}

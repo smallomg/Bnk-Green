@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="ex04.Member"%>
+<%@page import="java.util.List"%>
+<%
+Member member =(Member)session.getAttribute("member");
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원전용 결과 페이지</h1>
+	<hr>
+	<%-- <%
+			for (Member vo : list) {
+			
+			%>
+
+	id :
+	<%=vo.getId() %><br> pw :
+	<%=vo.getPw() %><br> name :
+	<%=vo.getName()%><br> grade :
+	<%=vo.getGrade() %><br>
+	<br>
+	<%} %> --%>
+	
+	<%-- <%=member.getId() %>
+<%=member.getPw() %>
+<%=member.getName() %>
+<%=member.getGrade() %> --%>
+
+<% if(member.getId()!=null){%>
+
+ID : ${sessionScope.member.getId()} <br>
+PW : ${sessionScope.member.getPw()}<br>
+NAME : ${sessionScope.member.getName()}<br>
+GRADE : ${sessionScope.member.getGrade()}<br>
+
+
+파라미터 id : ${param.id}<br>
+파라미터 pw : ${param.pw}<br>
+
+<%} %>
+
+<a href="logout">로그아웃</a>
+
+</body>
+</html>

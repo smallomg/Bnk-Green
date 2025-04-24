@@ -1,0 +1,23 @@
+package ex02.service;
+
+import java.util.List;
+
+import ex02.dao.MemberDAO;
+import ex02.vo.MemberVO;
+
+public class MemberService {
+		MemberDAO memberdao = new MemberDAO();
+	
+		
+		public void f() {
+			memberdao.insert();
+		}
+		
+		public List<MemberVO> selectAll() {
+			// db에 요청
+			List<MemberVO>list = memberdao.selectAll();
+			return list;
+		}
+		
+		
+}

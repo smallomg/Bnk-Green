@@ -1,0 +1,16 @@
+package ex06;
+
+import java.sql.Date;
+
+
+
+public class Member {
+
+	int custno;
+	String custname;
+	String phone;
+	String address;
+	Date joindate;
+	String grade;
+	String city;
+}

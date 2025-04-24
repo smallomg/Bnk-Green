@@ -1,0 +1,19 @@
+package ex06;
+
+import java.sql.Date;
+
+import lombok.Data;
+
+@Data
+
+public class Member {
+
+	int custno;
+	static int seq;
+	String custname;
+	String phone;
+	String address;
+	Date joindate;
+	String grade;
+	String city;
+}

@@ -1,0 +1,72 @@
+package ex04;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * Servlet implementation class memberServlet
+ */
+@WebServlet("/memberServlet")
+public class MemberServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MemberServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1.파라미터 받기
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+
+		// 2.
+		String grade = "일반";
+
+		// 3.멤버객체만들기
+		Member member = new Member();
+		member.setId(id);
+		member.setPw(pw);
+		member.setName(name);
+		member.setGrade(grade);
+
+		// 4.DB에 넣기
+		MemberDAO dao = new MemberDAO();
+		int result = dao.insert(member);
+
+		//5.DB에서 해당 회원정보 가져오기
+		if(result == 1) {
+		Member m = dao.select(id);
+		request.setAttribute("member", m);
+		}
+		request.getRequestDispatcher("result.jsp").forward(request, response);
+	}
+
+}

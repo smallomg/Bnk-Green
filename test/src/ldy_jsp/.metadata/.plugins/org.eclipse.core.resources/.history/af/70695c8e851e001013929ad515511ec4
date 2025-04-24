@@ -1,0 +1,54 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.SQLException"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<%
+//1. 파리미터 받기
+String title = request.getParameter("title");
+String content = request.getParameter("content");
+String writer = request.getParameter("writer");
+Connection conn = null;
+PreparedStatement pstmt = null;
+try {
+//2. DB접속하기
+Class.forName("oracle.jdbc.driver.OracleDriver");
+String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+String user = "green";
+String password = "1234";
+
+conn = DriverManager.getConnection(url, user, password);
+
+//3. 쿼리 접속하기
+String query = "INSERT INTO tbl_board VALUES(seq_board.nextval,?,?,?,SYSDATE)";
+pstmt = conn.prepareStatement(query);
+pstmt.setString(1,title);
+pstmt.setString(2,content);
+pstmt.setString(3,writer);
+pstmt.executeUpdate();
+
+//4. 페이지 이동하기
+response.sendRedirect("index.jsp");
+} catch (Exception e) {
+    e.printStackTrace(); // 에러 확인용
+    out.println("<p>오류 발생: " + e.getMessage() + "</p>");
+} finally {
+    try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
+    try { if (conn != null) conn.close(); } catch (Exception e) {}
+}
+%>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

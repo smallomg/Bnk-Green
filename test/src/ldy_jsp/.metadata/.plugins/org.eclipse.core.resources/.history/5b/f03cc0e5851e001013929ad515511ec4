@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <% //2. DB접속하기
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection conn = DriverManager.getConnection(
+		"jdbc:oracle:thin:@localhost:1521:testdb",
+		"green",
+		"1234"
+		);%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Board List Page</h1>
+	<hr>
+	
+</body>
+</html>

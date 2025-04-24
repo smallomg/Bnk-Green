@@ -1,0 +1,32 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Board List Page</h1>
+	<hr>
+	
+	<% 
+
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+String user = "green";
+String password = "1234";
+
+Connection con = DriverManager.getConnection(url,user,password);
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM tbl_board");
+
+%>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="ex06.Join"%>
+<%@page import="java.util.List"%>
+    <%
+List<Join> list = (List<Join>) request.getAttribute("list");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>회원매출 조회 페이지</h1>
+	<%@ include file="header.jsp"%>
+	
+	
+<table border="1">
+		<tr>
+			<th>회원번호</th>
+			<th>회원성명</th>
+			<th>고객등급</th>
+			<th>매출<th>
+		</tr>
+		<%
+	for (Join j : list) {
+	%>
+	<tr>
+	<td><%=j.getCustno()%></td>
+	<td><%=j.getCustname()%></td>
+	<td><%=j.getGrade()%></td>
+	<td><%=j.getPrice()%></td>
+	
+	</tr>
+		<%
+	}
+	%>
+		
+	</table>
+</body>
+</html>

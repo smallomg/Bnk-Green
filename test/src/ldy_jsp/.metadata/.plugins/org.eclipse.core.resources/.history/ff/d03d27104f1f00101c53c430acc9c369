@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%
+    String num1 = (String)request.getAttribute("num1");
+	String num2 = (String)request.getAttribute("num2");
+	
+	
+	String s_num1 = num1;
+	String s_num2 = num2;
+	//parseInt() : 문자열을 숫자로 바꿔줌
+	int n1= Integer.parseInt(s_num1);
+	int n2= Integer.parseInt(s_num1);
+	
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

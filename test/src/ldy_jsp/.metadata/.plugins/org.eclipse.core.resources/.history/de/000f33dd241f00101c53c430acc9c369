@@ -1,0 +1,72 @@
+package ex02.controller;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+import ex02.service.MemberService;
+import ex02.vo.MemberVO;
+
+/**
+ * Servlet implementation class ExServlet
+ */
+@WebServlet("/ExServlet")
+public class ExServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	MemberService memberservice = new MemberService();
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see Servlet#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+
+		// 파라미터 받기
+		List<MemberVO> list = memberservice.selectAll();
+		// 파라미터로 받은 데이터 가지고 해볼 만 한것들
+		// 1. 유호성검사
+
+	}
+
+}

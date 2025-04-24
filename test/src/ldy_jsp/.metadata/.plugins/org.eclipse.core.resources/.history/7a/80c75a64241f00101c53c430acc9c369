@@ -1,0 +1,7 @@
+package ex02.dao;
+
+public class MemberDAO {
+
+	public void insert() {}
+	public void selectAll() {}
+}

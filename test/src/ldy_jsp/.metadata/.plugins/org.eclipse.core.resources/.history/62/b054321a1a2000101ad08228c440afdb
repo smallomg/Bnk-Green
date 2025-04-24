@@ -1,0 +1,13 @@
+package ex04;
+
+import lombok.Data;
+import oracle.sql.DATE;
+
+@Data
+public class Board {
+String bno;
+String title;
+String content;
+String writer;
+DATE regdate;
+}

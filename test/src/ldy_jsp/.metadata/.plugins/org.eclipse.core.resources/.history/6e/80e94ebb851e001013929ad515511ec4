@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%
+String title = request.getParameter("title");
+String content = request.getParameter("content");
+String writer = request.getParameter("writer");
+
+Connection conn = null;
+PreparedStatement pstmt = null;
+
+try {
+    Class.forName("oracle.jdbc.driver.OracleDriver");
+    String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+    String user = "green";
+    String password = "1234";
+
+    conn = DriverManager.getConnection(url, user, password);
+
+    String query = "INSERT INTO tbl_board VALUES(seq_board.nextval, ?, ?, ?, SYSDATE)";
+    pstmt = conn.prepareStatement(query);
+    pstmt.setString(1, title);
+    pstmt.setString(2, content);
+    pstmt.setString(3, writer);
+    pstmt.executeUpdate();
+
+    response.sendRedirect("index.jsp");
+    return; // redirect 이후 아래 코드 실행 방지
+
+} catch (Exception e) {
+    e.printStackTrace();
+} finally {
+    try { if (pstmt != null) pstmt.close(); } catch (Exception e) {}
+    try { if (conn != null) conn.close(); } catch (Exception e) {}
+}
+%>

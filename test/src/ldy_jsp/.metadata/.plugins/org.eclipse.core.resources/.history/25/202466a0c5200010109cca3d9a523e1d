@@ -1,0 +1,45 @@
+package ex06;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MemberDAO {
+
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public MemberDAO() {
+		conn = DBConn.getConnection();
+	}
+
+	//등록
+	public int insert(Member member) {
+		int result = 0;
+		String query = "INSERT INTO member_tbl_02 VALUES(?,?,?,?,?,?,?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, member.getCustno());
+			pstmt.setString(2, member.getCustname());
+			pstmt.setString(3, member.getPhone());
+			pstmt.setString(4, member.getAddress());
+			pstmt.setDate(5, member.getJoindate());
+			pstmt.setString(6, member.getGrade());
+			pstmt.setString(7, member.getCity());
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+
+	}
+	
+	
+	
+}

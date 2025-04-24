@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ page import="java.util.*, ex05.A"%>
+
+
+<%
+List<A> list = new ArrayList<>();
+list.add(new A("홍길동", 23));
+list.add(new A("전우치", 25));
+list.add(new A("손오공", 26));
+
+pageContext.setAttribute("list", list);
+%>
+<!-- c써있는 이유 core 접속사 forEach : for반복에서 배열자료를 갖는거구나 items배열임 list는 배열이 갖는 요소
+		 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>no</th>
+				<th>name</th>
+				<th>age</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<c:forEach var="a" items="${list }" varStatus="status">
+				<tr>
+					<td>${status.count }</td>
+					<td>${a.name }</td>
+					<td>${a.age }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</body>
+</html>

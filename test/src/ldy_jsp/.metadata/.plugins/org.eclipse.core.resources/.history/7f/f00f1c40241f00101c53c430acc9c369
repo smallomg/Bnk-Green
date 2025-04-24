@@ -1,0 +1,6 @@
+package ex02.dao;
+
+public class MemberDAO {
+
+	void insert() {}
+}

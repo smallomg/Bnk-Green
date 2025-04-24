@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="ex04.Member"%>
+<%@page import="java.util.List"%>
+    
+    <%
+Member member =(Member)session.getAttribute("member");
+
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<% if(member != null && member.getId() != null) { %>
+로그인 상태<br>
+ID : ${sessionScope.member.getId()} <br>
+PW : ${sessionScope.member.getPw()}<br>
+NAME : ${sessionScope.member.getName()}<br>
+GRADE : ${sessionScope.member.getGrade()}<br>
+
+<form action="BoardInsert">
+<input type="text" name="title">
+<input type="text"name="content">
+<input type="text"name="writer">
+<input type="submit"value="작성">
+</form>
+
+
+<a href="#">게시글 조회</a><br>
+<a href="logout">로그아웃</a>
+
+<%} else {%>
+	로그아웃 상태<br>
+	<a href="login.jsp">로그인 해주세요</a>
+<%}%>
+</body>
+</html>

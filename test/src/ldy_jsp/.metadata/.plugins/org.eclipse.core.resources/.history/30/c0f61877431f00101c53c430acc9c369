@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<%String []movies = request.getParameterValues("movies"); %>
+<body>
+내가 가장 좋아하는 과일을 <%=request.getParameter("fruit")%><br>
+내가 가장 좋아하는 과목은 <%=request.getParameter("subject") %><br>
+내가 가장 좋아하는 동물은 <%=request.getParameter("animal") %><br>
+
+<%for(int i = 0;i<movies.length;i++){ %>
+내가 가장 좋아하는 영화는 <%=movies[i];%><br>
+<%} %>
+</body>
+</html>

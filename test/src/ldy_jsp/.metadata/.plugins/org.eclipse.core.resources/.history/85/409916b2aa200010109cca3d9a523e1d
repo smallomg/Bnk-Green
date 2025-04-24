@@ -1,0 +1,13 @@
+package ex05;
+
+import lombok.Data;
+
+@Data
+public class A {
+
+	int no;
+	String name;
+	int age;
+	
+	
+}

@@ -1,0 +1,48 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DB 결과</title>
+</head>
+<body>
+<% 
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+String user = "green";
+String password = "1234";
+
+Connection con = DriverManager.getConnection(url,user,password);
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM t1");
+%>
+
+<table border="1">
+    <tr>
+        <th>c1</th>
+        <th>c2</th>
+    </tr>
+
+<% while(rs.next()) { 
+     int c1 = rs.getInt("c1");
+     String c2 = rs.getString("c2");
+%>
+    <tr>
+        <td><%= c1 %></td>
+        <td><%= c2 %></td>
+    </tr>
+<% } 
+
+rs.close();
+stmt.close();
+con.close();
+%>
+</table>
+</body>
+</html>

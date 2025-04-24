@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="test.DBCon"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="ex02.dao.MemberDAO"/>
+    <fullyQualifiedTypeName name="ex02.service.MemberService"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="ex02.vo.MemberVO"/>
+    <fullyQualifiedTypeName name="ex02.controller.ExServlet"/>
+    <fullyQualifiedTypeName name="ex04.DBConn"/>
+    <fullyQualifiedTypeName name="ex04.MemberDAO"/>
+    <fullyQualifiedTypeName name="ex04.Member"/>
+    <fullyQualifiedTypeName name="java.net.Authenticator.RequestorType"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="javax.swing.border.Border"/>
+    <fullyQualifiedTypeName name="ex04.BoardInsert"/>
+    <fullyQualifiedTypeName name="ex04.Board"/>
+    <fullyQualifiedTypeName name="ex04.BoardDAO"/>
+    <fullyQualifiedTypeName name="oracle.sql.DATE"/>
+</qualifiedTypeNameHistroy>

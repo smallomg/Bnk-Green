@@ -1,0 +1,15 @@
+package ex02.service;
+
+import ex02.dao.MemberDAO;
+
+public class MemberService {
+		MemberDAO memberdao = new MemberDAO();
+	
+		
+		public void f() {
+			memberdao.insert();
+		}
+		
+		public void selectAll() {}
+		
+}

@@ -1,0 +1,12 @@
+package test;
+import java.sql.Statement;
+
+public class Select_test {
+
+	public static void main(String[] args) {
+		
+		Connection con = DBcon.
+
+	}
+
+}

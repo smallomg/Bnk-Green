@@ -1,0 +1,10 @@
+package test;
+
+public class Insert {
+	
+	private Connection conn;
+	
+	public Insert() {
+		
+	}
+}

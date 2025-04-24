@@ -1,0 +1,11 @@
+package ex05;
+
+
+public class A {
+
+	
+
+	public A(String name, int age) {
+		
+	}
+}

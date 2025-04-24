@@ -1,0 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="ex04.Member"%>
+<%@page import="ex04.Board"%>
+<%@page import="java.util.List"%>
+<%
+Member member =(Member)session.getAttribute("member");
+Board board =(Board)session.getAttribute("board");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원전용 결과 페이지</h1>
+	<hr>
+	<%-- <%
+			for (Member vo : list) {
+			
+			%>
+
+	id :
+	<%=vo.getId() %><br> pw :
+	<%=vo.getPw() %><br> name :
+	<%=vo.getName()%><br> grade :
+	<%=vo.getGrade() %><br>
+	<br>
+	<%} %> --%>
+	
+	<%-- <%=member.getId() %>
+<%=member.getPw() %>
+<%=member.getName() %>
+<%=member.getGrade() %> --%>
+
+<% if(member != null && member.getId() != null) { %>
+<h2>로그인 상태</h2>
+<h2>내 정보</h2>
+ID : ${sessionScope.member.getId()} <br>
+PW : ${sessionScope.member.getPw()}<br>
+NAME : ${sessionScope.member.getName()}<br>
+GRADE : ${sessionScope.member.getGrade()}<br>
+<hr>
+<h2>게시글작성</h2>
+<h3>작성완성</h3>
+BNO : ${sessionScope.board.getBno()} <br>
+TITLE : ${sessionScope.board.getTitle()} <br>
+CONTENT : ${sessionScope.board.getContent()} <br>
+WRITER : ${sessionScope.board.getWriter()} <br>
+REGDATE : ${sessionScope.board.getRegdate()} <br>
+
+<a href="boardInsert.jsp">게시글 작성</a><br>
+
+
+
+
+
+<a href="logout">로그아웃</a>
+
+<%} else {%>
+	로그아웃 상태<br>
+	<a href="login.jsp">로그인 해주세요</a>
+<%}%>
+
+
+
+</body>
+</html>

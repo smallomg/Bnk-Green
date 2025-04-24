@@ -1,0 +1,13 @@
+package ex02.dao;
+
+import java.util.ArrayList;
+
+public class MemberDAO {
+
+	public void insert() {}
+	public List<MemberVO>  selectAll() {
+		List<MemberVo> list = new ArrayList<>();
+		
+		return list;
+	}
+}
