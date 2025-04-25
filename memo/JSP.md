@@ -51,3 +51,19 @@ dao는 db쿼리를 날리고
 저장하고 뷰에 전달한다
 
 //parseInt() : 문자열을 숫자로 바꿔줌
+
+Action Tag
+안에 내용이 있다면 무조건 </ex>
+안에 내용이 없다면 마지막에 <ex/>
+- <jsp:forward /> 
+- <jsp:include>
+- <jsp:param>
+- <jsp:useBean>
+- <jsp:setProperty>
+- <jsp:getProperty>
+
+required
+
+다시 쓰기 type="reset"
+
+샘플데이터로 확인할때는 commit 하자
