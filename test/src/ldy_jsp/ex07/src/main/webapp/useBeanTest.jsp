@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="ex07.vo.Man"%>
+<%
+Man man = new Man();
+man.setName("홍길동");
+man.setAge(26);
+man.setJob("개발자");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>useBean Page</h2>
+	<jsp:useBean id="m" class="ex07.vo.Man" />
+	<%--property: 멤버변수 이름
+		name	: useBean의 id와 일치해야함 --%>
+	<jsp:setProperty property="name" name="m" value="전우치" />
+	<jsp:setProperty property="age" name="m" value="33" />
+	<jsp:setProperty property="job" name="m" value="디자이너" />
+	
+	이름 :
+	<jsp:getProperty property="name" name="m" /><br>
+	나이 :
+	<jsp:getProperty property="age" name="m" /><br>
+	직업 :
+	<jsp:getProperty property="job" name="m" /><br>
+<%= m.getAge() %>
+</body>
+</html>

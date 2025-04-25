@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ page import ="ex07.vo.Man" %>
+    <%
+    Man man = new Man();
+    man.setName("홍길동");
+    man.setAge(26);
+    man.setJob("개발자");
+    
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

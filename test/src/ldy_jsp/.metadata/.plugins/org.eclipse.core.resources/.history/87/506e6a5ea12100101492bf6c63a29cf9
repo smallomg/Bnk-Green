@@ -1,0 +1,113 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import jdbc.DBConn;
+import vo.OP;
+import vo.OPS;
+import vo.Order;
+
+public class OrderDAO {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public OrderDAO() {
+
+		conn = DBConn.getConnection();
+	}
+
+	public int insert(Order order) {
+		int result = 0;
+		String query = "INSERT INTO tbl_order VALUES(?,?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, order.getOrderno());
+			pstmt.setString(2, order.getShopno());
+			pstmt.setString(3, order.getOrderdate());
+			pstmt.setString(4, order.getPcode());
+			pstmt.setInt(5, order.getAmount());
+
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+
+	}
+
+	public List<OPS> selectAll() {
+		 System.out.println("selectAll() 실행됨"); // 추가
+		List<OPS> list = new ArrayList<>();
+		String query = "SELECT s.shopno, s.shopname, o.orderno, o.orderdate, "
+	            + "p.pcode, p.pname, o.amount, p.cost, "
+	            + "(p.cost * o.amount) AS prices, "
+	            + "((p.cost * o.amount) - (o.amount * p.cost * (s.discount / 100))) AS saleprice "
+	            + "FROM tbl_product p, tbl_shop s, tbl_order o "
+	            + "WHERE p.pcode = o.pcode AND s.shopno = o.shopno";
+
+
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				OPS ops = new OPS();
+				ops.setShopno(rs.getString("shopno"));
+				ops.setShopname(rs.getString("shopname"));
+				ops.setOrderno(rs.getString("orderno"));
+				ops.setOrderdate(rs.getString("orderdate"));
+				ops.setPcode(rs.getString("pcode"));
+				ops.setPname(rs.getString("pname"));
+				ops.setAmount(rs.getInt("amount"));
+				ops.setCost(rs.getInt("cost"));
+				ops.setPrices(rs.getInt("prices"));
+				ops.setSaleprice(rs.getInt("saleprice"));
+
+				
+				list.add(ops);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	
+	public List<OP> select() {
+		
+		List<OP> list = new ArrayList<>();
+		String query = "SELECT o.shopno,p.pcode,p.pname,SUM(o.amount)AS sumamount FROM tbl_order o,tbl_product p"
+				+ "WHERE o.pcode = p.pcode"
+				+ "group by o.shopno,p.pcode,p.pname";
+
+
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+			    OP op = new OP();
+				op.setShopno(rs.getString("shopno"));
+				op.setPcode(rs.getString("pcode"));
+				op.setPname(rs.getString("pname"));
+				op.setSumamount(rs.getInt("sumamount"));
+				
+				list.add(op);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+}

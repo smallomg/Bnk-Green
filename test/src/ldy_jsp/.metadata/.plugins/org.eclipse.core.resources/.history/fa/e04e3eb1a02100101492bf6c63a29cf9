@@ -1,0 +1,8 @@
+package vo;
+
+public class OP {
+	String shopno;
+	String pcode;
+	String pname;
+	int sum_amount;
+}

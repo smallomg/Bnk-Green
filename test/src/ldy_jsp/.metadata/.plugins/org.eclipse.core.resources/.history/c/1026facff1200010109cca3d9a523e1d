@@ -1,0 +1,153 @@
+package ex06;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MemberDAO {
+
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public MemberDAO() {
+		conn = DBConn.getConnection();
+	}
+
+	// 등록
+	public int insert(Member member) {
+		int result = 0;
+		String query = "INSERT INTO member_tbl_02 VALUES(?,?,?,?,?,?,?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, member.getCustno());
+			pstmt.setString(2, member.getCustname());
+			pstmt.setString(3, member.getPhone());
+			pstmt.setString(4, member.getAddress());
+			pstmt.setString(5, member.getJoindate());
+			pstmt.setString(6, member.getGrade());
+			pstmt.setString(7, member.getCity());
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+
+	}
+
+	// 회원목록 조회
+	public List<Member> selectAll() {
+
+		List<Member> list = new ArrayList<>();
+		String query = "SELECT * FROM member_tbl_02";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				int custno = rs.getInt("custno");
+				String custname = rs.getString("custname");
+				String phone = rs.getString("phone");
+				String address = rs.getString("address");
+				String joindate = rs.getString("joindate");
+				String grade = rs.getString("grade");
+				String city = rs.getString("city");
+
+				Member m = new Member();
+				m.setCustno(custno);
+				m.setCustname(custname);
+				m.setPhone(phone);
+				m.setAddress(address);
+				m.setJoindate(joindate);
+				m.setGrade(grade);
+				m.setCity(city);
+
+				list.add(m);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+
+	}
+
+	//매출조회
+public List<Join> select() {
+    List<Join> list = new ArrayList<>();
+
+    String query = "SELECT e.custno, e.custname, e.grade, SUM(o.price) AS price "
+                 + "FROM member_tbl_02 e, money_tbl_02 o "
+                 + "WHERE e.custno = o.custno "
+                 + "GROUP BY e.custno, e.custname, e.grade";
+
+    try {
+        System.out.println("쿼리 실행 준비");
+        if (conn == null) {
+            System.out.println("DB 연결이 안 되어 있음!");
+            return list;
+        }
+
+        pstmt = conn.prepareStatement(query);
+        rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            Join j = new Join();
+            j.setCustno(rs.getInt("custno"));
+            j.setCustname(rs.getString("custname"));
+            j.setGrade(rs.getString("grade"));
+            j.setPrice(rs.getInt("price"));
+
+            list.add(j);
+        }
+
+        System.out.println("조회된 데이터 개수: " + list.size());
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return list;
+}
+
+public int update(Member member) {
+	int result = 0;
+	String query = "UPDATE member_tbl_02 "
+			+ "SET custno = ? ,"
+			+ "SET custname = ? ,"
+			+ "SET phone = ?,"
+			+ "SET address = ?,"
+			+ "SET joindate = ?,"
+			+ "SET grade = ?,"
+			+ "SET city = ?"
+			+ "WHERE cust no = ?";
+
+	try {
+		pstmt = conn.prepareStatement(query);
+		
+		pstmt.setString(1, member.getCustname());
+		pstmt.setString(2, member.getPhone());
+		pstmt.setString(3, member.getAddress());
+		pstmt.setString(4, member.getJoindate());
+		pstmt.setString(5, member.getGrade());
+		pstmt.setString(6, member.getCity());
+		pstmt.setInt(6, member.getCustno());
+		
+		result = pstmt.executeUpdate();
+
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+
+	return result;
+	
+}
+}

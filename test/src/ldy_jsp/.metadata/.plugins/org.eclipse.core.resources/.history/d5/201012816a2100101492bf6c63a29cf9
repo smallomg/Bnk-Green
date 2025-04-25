@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form action="actionTagTest.jsp">
+	<input type="text"name="userId">
+	<input type="password"name="userPwd">
+	<input type="radio"name="LoginCheck"value="user" checked>사용자
+	<input type="radio"name="LoginCheck"value="manager" checked>괸리자
+	<input type="submit"value="로그인">
+	</form>
+</body>
+</html>

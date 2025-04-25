@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%@ include file="header.jsp"%>
+
+	<h2>주문등록</h2>
+	<table border="1">
+		<tr>
+			<td>주문번호</td>
+			<td><input type="text" name="orderno"></td>
+		</tr>
+		<tr>
+			<td>주문점포</td>
+			<td><select name="shopno">
+					<option value=" ">점포선택</option>
+					<option value="S001">AA할인점</option>
+					<option value="S002">BB할인점</option>
+					<option value="S003">CC할인점</option>
+					<option value="S004">DD할인점</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>주문일자</td>
+			<td><input type="text" name="orderdate"></td>
+		</tr>
+		<tr>
+			<td>제품코드</td>
+			<td><input type="text" name="pcode"></td>
+		</tr>
+		<tr>
+			<td>주문수량</td>
+			<td><input type="text" name="amount"></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

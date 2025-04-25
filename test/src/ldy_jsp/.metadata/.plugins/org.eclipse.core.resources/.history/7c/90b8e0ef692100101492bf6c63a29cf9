@@ -1,0 +1,6 @@
+package ex07.vo;
+
+public class Men {
+	private String name;
+	priva
+}

@@ -27,20 +27,29 @@ List<Join> list = (List<Join>) request.getAttribute("list");
 
 		</tr>
 		<%
-		for (Join j : list) {
+		if (list != null) {
+			for (Join j : list) {
 		%>
 
+
+
 		<tr>
-			<td>${j.getCustno()}</td>
-			<td>${j.getCustname()}</td>
-			<td>${j.getGrade()}</td>
-			<td>${j.getPrice()}</td>
+			<td><%=j.getCustno()%></td>
+			<td><%=j.getCustname()%></td>
+			<td><%=j.getGrade()%></td>
+			<td><%=j.getPrice()%></td>
 
 		</tr>
 		<%
 		}
+		} else {
 		%>
-
+		<tr>
+			<td colspan="4">데이터가 없습니다.</td>
+		</tr>
+		<%
+		}
+		%>
 	</table>
 </body>
 </html>

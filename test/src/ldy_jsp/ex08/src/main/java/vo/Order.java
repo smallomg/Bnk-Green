@@ -1,0 +1,13 @@
+package vo;
+
+import lombok.Data;
+
+@Data
+public class Order {
+	String orderno;
+	String shopno;
+	String orderdate;
+	String pcode;
+	int amount;
+	
+}

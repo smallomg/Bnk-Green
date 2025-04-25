@@ -1,0 +1,29 @@
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<fmt:formatNumber value="1234567.89" type="number" groupingUsed="true" />
+<!-- 출력: 1,234,567.89 -->
+
+<fmt:formatNumber value="0.75" type="percent" />
+<!-- 출력: 75% -->
+
+<fmt:formatNumber value="1234.56" type="currency" />
+<!-- 출력: ₩1,234.56 (locale에 따라 다름) -->
+
+<jsp:useBean id="today" class="java.util.Date" />
+<fmt:formatDate value="${today}" pattern="yyyy-MM-dd HH:mm:ss" />
+<!-- 출력: 2025-04-25 17:20:01 -->
+<fmt:parseNumber var="result" value="3,000" />
+결과: ${result + 1000}
+<!-- 출력: 결과: 4000 -->
+
+
+</body>
+</html>

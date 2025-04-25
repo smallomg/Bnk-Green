@@ -33,7 +33,8 @@ List<Member> list = (List<Member>) request.getAttribute("list");
 	for (Member m : list) {
 	%>
 	<tr>
-	<td><%=m.getCustno()%></td>
+	<td><a href="memberUpdate.jsp?custno=<%=m.getCustno()%>"><%=m.getCustno()%></a></td>
+
 	<td><%=m.getCustname()%></td>
 	<td><%=m.getPhone()%></td>
 	<td><%=m.getAddress()%></td>

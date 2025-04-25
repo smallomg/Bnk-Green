@@ -31,6 +31,7 @@ public class JoinServlet extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		
 		List<Join>list = dao.select();
+		System.out.println("Join 데이터 개수: " + list.size());  // ← 확인용 출력
 		
 		request.setAttribute("list", list);
 		

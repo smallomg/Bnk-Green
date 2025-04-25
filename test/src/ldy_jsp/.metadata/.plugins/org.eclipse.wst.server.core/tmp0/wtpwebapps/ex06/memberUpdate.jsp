@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="ex06.MemberDAO"%>
+<%@ page import="ex06.Member"%>
+<%
+String custnoParam = request.getParameter("custno");
+Member member = null;
+
+if (custnoParam != null) {
+	int custno = Integer.parseInt(custnoParam);
+	MemberDAO dao = new MemberDAO();
+	for (Member m : dao.selectAll()) {
+		if (m.getCustno() == custno) {
+	member = m;
+	break;
+		}
+	}
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원수정 페이지</h1>
+	<%@ include file="header.jsp"%>
+
+	<h2>회원 수정</h2>
+	<form action="UpdateServlet" method="POST">
+		<table border="1">
+			<tr>
+				<td>회원번호(자동발생)</td>
+				<td><input type="text" name="custno"
+					value="<%=member != null ? member.getCustno() : ""%>" readonly></td>
+			</tr>
+			<tr>
+				<td>회원성명</td>
+				<td><input type="text" name="custname"
+					value="<%=member != null ? member.getCustname() : ""%>"></td>
+			</tr>
+			<tr>
+				<td>회원전화</td>
+				<td><input type="text" name="phone"
+					value="<%=member != null ? member.getPhone() : ""%>"></td>
+			</tr>
+			<tr>
+				<td>회원주소</td>
+				<td><input type="text" name="address"
+					value="<%=member != null ? member.getAddress() : ""%>"></td>
+			</tr>
+			<tr>
+				<td>가입일자</td>
+				<td><input type="text" name="joindate"
+					value="<%=member != null ? member.getJoindate() : ""%>"></td>
+			</tr>
+			<tr>
+				<td>고객등급[A:VIP,B:일반,C:직원]</td>
+				<td><input type="text" name="grade"
+					value="<%=member != null ? member.getGrade() : ""%>"></td>
+			</tr>
+			<tr>
+				<td>도시코드</td>
+				<td><input type="text" name="city"
+					value="<%=member != null ? member.getCity() : ""%>"></td>
+			</tr>
+			<tr>
+
+				<input type="submit" onclick="insert()" value="수정" />
+
+
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>
+
+<script>
+	function insert() {
+		alert("버튼이 클릭됨.");
+
+	}
+	function bselect() {
+		alert("버튼이 w.");
+		location.href = "SelectServlet";
+	}
+</script>

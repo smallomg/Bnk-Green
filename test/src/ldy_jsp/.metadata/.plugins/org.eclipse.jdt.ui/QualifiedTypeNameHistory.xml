@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="ex02.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="ex02.service.MemberService"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="ex02.vo.MemberVO"/>
     <fullyQualifiedTypeName name="ex02.controller.ExServlet"/>
     <fullyQualifiedTypeName name="ex04.DBConn"/>
@@ -19,4 +18,16 @@
     <fullyQualifiedTypeName name="ex04.Board"/>
     <fullyQualifiedTypeName name="ex04.BoardDAO"/>
     <fullyQualifiedTypeName name="oracle.sql.DATE"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="ex06.DBConn"/>
+    <fullyQualifiedTypeName name="ex06.Money"/>
+    <fullyQualifiedTypeName name="ex06.Join"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="jdbc.DBConn"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="servlet.orederServlet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="vo.Product"/>
 </qualifiedTypeNameHistroy>
