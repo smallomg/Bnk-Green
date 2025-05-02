@@ -1,0 +1,46 @@
+package ex10;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+public class DAO {
+	
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	
+	
+	
+	DAO(){
+		conn = DBConn.getConnection();
+	}
+	
+	
+	public int insert(SignUp su) {
+		int result = 0;
+		String query = "INSERT INTO member VALUES(?, ?, ?, ?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, su.getId());
+			pstmt.setString(2, su.getPw());
+			pstmt.setString(3, su.getName());
+			pstmt.setString(4, su.getGrade());
+
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	public SignUp login(String id,String pw) {
+		return 0;
+	}
+	
+}

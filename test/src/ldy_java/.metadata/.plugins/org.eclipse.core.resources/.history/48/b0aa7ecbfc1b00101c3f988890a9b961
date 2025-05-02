@@ -1,0 +1,18 @@
+package file;
+
+public class FinallyTest {
+
+	public static void main(String[] args) {
+		
+		System.out.println("----Start----");
+		String s = "aaa";
+		
+		
+		System.out.println(s.charAt(0));
+		
+		
+		System.out.println("----End----");
+
+	}
+
+}

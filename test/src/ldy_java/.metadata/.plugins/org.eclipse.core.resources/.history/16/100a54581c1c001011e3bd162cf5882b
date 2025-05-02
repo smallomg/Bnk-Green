@@ -1,0 +1,20 @@
+package Interface;
+
+enum Member{
+	NAME , GENDER('F')
+	
+	char gender;
+	
+	private Member(char gender) {
+		this.gender = gender;
+	}
+}
+
+public class Member {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

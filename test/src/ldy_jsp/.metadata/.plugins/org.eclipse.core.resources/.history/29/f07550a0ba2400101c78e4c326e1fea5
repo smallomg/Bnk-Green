@@ -1,0 +1,19 @@
+package ex11;
+
+import .Context;
+
+public class DBconnPool {
+	Context initCtx = new InitialContext();
+	
+	public DBconnPool() {
+		t
+		
+		
+	}
+	
+	public void close() {
+		try {
+			if(conn)
+		}
+	}
+}

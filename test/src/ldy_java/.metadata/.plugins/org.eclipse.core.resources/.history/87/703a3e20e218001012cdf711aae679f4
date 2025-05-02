@@ -1,0 +1,30 @@
+package jdbc;
+
+public class MemberTest {
+
+	public static void main(String[] args) {
+		
+		Member2 m1  = new Member2();
+		
+		m1.setMno(1);
+		m1.setName("aaa");
+		m1.setPhone("010-1111-1111");
+		
+		System.out.println(m1);
+		
+		Member2 m2  = new Member2();
+		
+		m2.setMno(2);
+		m2.setName("aaa");
+		m2.setPhone("010-1111-1111");
+		
+		
+		System.out.println(m2);
+		
+		System.out.println(m1 == m2);
+		Member2 m3 = m1;
+		
+		System.out.println(m1 == m3);
+	}
+
+}

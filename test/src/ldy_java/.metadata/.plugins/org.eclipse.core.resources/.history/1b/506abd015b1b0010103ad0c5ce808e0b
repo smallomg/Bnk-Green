@@ -1,0 +1,67 @@
+package management;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import ex05.Board;
+
+public class Purchase_Sale {
+	// 구매 판매
+
+	// 이미 회원이 있다 치고
+	//
+
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public Purchase_Sale() {
+		conn = DBConn.getConnection();
+	}
+
+	// 사원이 매입장부를 기재한다
+	public int PCinsert(Purchase purchase) {
+		int result = 0;
+		String query = "INSERT INTO purchase VALUES(seq_pc_code.NEXTVAL,?,?,?,?,?,?,?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, purchase.getPc_date());
+			pstmt.setInt(2, purchase.getPc_stock());
+			pstmt.setInt(3, purchase.getPc_cost());
+			pstmt.setInt(4, purchase.getPc_total());
+			pstmt.setInt(5, purchase.getC_code());
+			pstmt.setInt(6, purchase.getP_code());
+			pstmt.setInt(7, purchase.getS_code());
+
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	// 사원이 판매장부를 기재한다
+	public int SAinsert(Sale sale) {
+		int result = 0;
+		String query = "INSERT INTO purchase VALUES(seq_sa_code.NEXTVAL,?,?,?,?,?,?,?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setDate(1, sale.getSa_date());
+			pstmt.setInt(2, sale.getSa_stock());
+			pstmt.setInt(3, sale.getSa_cost());
+			pstmt.setInt(4, sale.getSa_total());
+			pstmt.setInt(5, sale.getC_code());
+			pstmt.setInt(6, sale.getP_code());
+			pstmt.setInt(7, sale.getS_code());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+}

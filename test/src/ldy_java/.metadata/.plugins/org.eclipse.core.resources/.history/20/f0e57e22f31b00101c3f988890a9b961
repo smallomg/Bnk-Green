@@ -1,0 +1,15 @@
+package stream;
+
+import java.util.List;
+
+public class StreamMidOpsTest {
+
+	public static void main(String[] args) {
+		List<Integer> number = List.of(10,20,30,40,50,60,70);
+		
+		number.stream().skip(2) // 2개의 요소를 건너뜀
+					   .limit(3) // 요소를 3개로 제한
+					   .forEach(System.out::println);
+	}
+
+}

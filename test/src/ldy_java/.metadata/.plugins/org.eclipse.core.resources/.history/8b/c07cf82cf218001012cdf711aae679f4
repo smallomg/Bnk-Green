@@ -1,0 +1,17 @@
+package jdbc;
+
+import lombok.Setter;
+import lombok.Getter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+public class Member3 extends Member2{
+
+	private int mno;
+	private String name;
+	private String phone;
+	
+	
+}

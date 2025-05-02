@@ -1,0 +1,10 @@
+package management;
+
+import lombok.Data;
+import java.sql.Date;
+@Data
+public class Purchase {
+
+	private int pc_code;
+	private Da
+}

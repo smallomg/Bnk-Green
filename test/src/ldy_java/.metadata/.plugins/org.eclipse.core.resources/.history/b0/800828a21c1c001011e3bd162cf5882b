@@ -1,0 +1,28 @@
+package Interface;
+
+enum Member{
+	NAME("이름") , GENDER('F');
+	
+	String name;
+	char gender;
+	
+	private Member(String name) {
+		this.name = name;
+	}
+	private Member(char gender) {
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return name + gender;
+	}
+}
+
+public class Member {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

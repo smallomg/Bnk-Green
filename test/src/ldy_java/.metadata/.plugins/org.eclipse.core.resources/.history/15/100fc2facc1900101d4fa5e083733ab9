@@ -1,0 +1,116 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BookDAO {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+
+	public BookDAO() {
+		conn = DBConn.getConnection();
+	}
+	
+	
+	// 책 작성
+	public int insert(Book book) {
+		int result = 0;
+		String query = "INSERT INTO book VALUES(?, ?, ?, ?, ?)";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, book.getBno());
+			pstmt.setString(2, book.getTitle());
+			pstmt.setString(3, book.getWriter());
+			pstmt.setString(4, book.getPublisher());
+			pstmt.setInt(5, book.getPrice());
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	// 책 조회
+	public List<Book> select() {
+		List<Book> list = new ArrayList<>();
+		String query = "SELECT * FROM book";
+		try {
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int bno =rs.getInt("bno");
+				String title = rs.getString("title");
+				String writer = rs.getString("writer");
+				String publisher = rs.getString("publisher");
+				int price = rs.getInt("price");
+				
+				Book book = new Book();
+				book.setBno(bno);
+				book.setTitle(title);
+				book.setWriter(writer);
+				book.setPublisher(publisher);
+				book.setPrice(price);
+				
+				list.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	//책 선택조회
+	public List<Book> select(int bno) {
+		List<Book> list = new ArrayList<>();
+		String query = "SELECT * FROM book WHERE bno LIKE ?";
+		try {
+			pstmt = conn.prepareStatement(query);
+			 pstmt.setString(1, "%" + bno + "%");
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int b =rs.getInt("bno");
+				String title = rs.getString("title");
+				String writer = rs.getString("writer");
+				String publisher = rs.getString("publisher");
+				int price = rs.getInt("price");
+				
+				Book book = new Book();
+				book.setBno(b);
+				book.setTitle(title);
+				book.setWriter(writer);
+				book.setPublisher(publisher);
+				book.setPrice(price);
+				
+				list.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	// 책 삭제
+	public int delete(int bno) {
+		int result = 0;
+		String query = "DELETE FROM book WHERE bno=?";
+
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, bno);
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+}

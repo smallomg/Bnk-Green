@@ -1,0 +1,20 @@
+package Interface;
+
+enum Gender {
+	MALE, FEMALE;
+}
+enum Level {
+	MALE, FEMALE;
+}
+
+public class User {
+
+	public static void main(String[] args) {
+		
+		int code ;
+		String name;
+		Gender gender;
+		Level level;
+	}
+
+}

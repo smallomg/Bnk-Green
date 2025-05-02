@@ -1,0 +1,14 @@
+package jdbc;
+
+public class PointTest {
+
+	public static void main(String[] args) {
+
+		Point org = new Point(3,5);
+		Point cpy;
+		
+		cpy = org.clone();
+		
+	}
+
+}

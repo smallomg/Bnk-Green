@@ -1,0 +1,21 @@
+package jdbc;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class CollectionsCopyTest {
+
+	public static void main(String[] args) {
+
+		List<String>src = new ArrayList<>();
+		
+		//수정가능한 리스트로 생성
+		List<String> dst = new ArrayList<>(src);
+		System.out.println(dst);
+		
+		Collections.sort(dst);
+		System.out.println(dst);
+	}
+
+}

@@ -1,0 +1,12 @@
+package test;
+
+public class SingletonTest extends A{
+
+	public static void main(String[] args) {
+
+		A a = A.getIntstance();
+		
+		A b = A.getIntstance();
+	}
+
+}

@@ -95,7 +95,7 @@ public class MemberDAO {
 	
 	public Member login(String id,String pw) {
 		
-		String query = "SELECT * FROM member WHERE id = ?AND pw = ?";
+		String query = "SELECT * FROM member WHERE id = ? AND pw = ?";
 		Member m = new Member();
 		try {
 			pstmt = conn.prepareStatement(query);

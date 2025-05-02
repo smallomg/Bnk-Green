@@ -1,0 +1,17 @@
+package jdbc;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@Getter
+@ToString
+
+// Person 클래스는 불변 값이 정해지면 변경불가
+public class Person {
+
+	private String name;
+	private int age;
+
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+
+        #img_menu {
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        #menu {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e85c4d;
+        }
+</style> -->
+<body>
+    <h1>점심 메뉴 추천</h1>
+    <hr>
+    <img src=" " id="img_menu" width="300" height="300">
+    <p id="menu">메뉴를 정할게요</p>
+    <button onclick="f()">점심 메뉴를 정해줘</button>
+
+
+    <script>
+        const rdNum = Math.random();
+        const menu = document.getElementById("menu");
+        const img_menu = document.querySelector("#img_menu");
+        //const img_menu = document.querySelectorAll("img_menu");
+
+        let lunch = ['회덮밥', '짜장면', '콩나물국밥', '돈까스', '구내식당'
+            , '찜닭', '김치찌개', '청국장', '햄버거', '보쌈', '돈까스덮밥', '도시락',
+            '냉면', '백반', '해장국', '설렁탕', '뚝배기불고기', '부대찌개', '분식',
+            '편의점도시락', '된장찌개', '순두부찌개', '비빔밥', '제육볶음'
+        ];
+
+        function f() {
+            const rdNumto24 = Math.floor(Math.random() * 23 + 1);
+            for(let i = 0;i<lunch.length;i++){ 
+                if (lunch[i]) { img_menu.src = `img/${rdNumto24}.jpg`; }
+            }
+            
+            menu.innerText = `${lunch[rdNumto24]}`
+            
+        }
+    </script>
+</body>
+
+</html>

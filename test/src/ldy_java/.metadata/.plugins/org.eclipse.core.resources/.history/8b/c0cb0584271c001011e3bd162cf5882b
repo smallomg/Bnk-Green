@@ -1,0 +1,5 @@
+package Interface;
+
+public class MyThread extends Thread{
+	//프로세스는 하나 이상의 쓰레드를 가진다
+}

@@ -1,0 +1,49 @@
+package management;
+
+import java.sql.Date;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("날짜를 입력해주세요 ex)2025-04-17");
+        String dateStr = sc.next();
+        Date pc_date = Date.valueOf(dateStr);  // 날짜 변환 ✅
+
+        System.out.println("입고수량을 적어주세요");
+        int pc_stock = sc.nextInt();
+        sc.nextLine();
+        System.out.println("상품단가를 적어주세요");
+        int pc_cost = sc.nextInt();
+        sc.nextLine();
+        
+        int pc_total = pc_stock * pc_cost;
+
+        Purchase pc = new Purchase();
+        Stock st = new Stock();
+        pc.setPc_date(pc_date);
+        pc.setPc_stock(pc_stock);
+        pc.setPc_cost(pc_cost);
+        pc.setPc_total(pc_total);
+        pc.setC_code(1);  // 반드시 존재해야 함
+        pc.setP_code(1);  // 존재해야 함
+        pc.setS_code(1);  // 존재해야 함
+        
+        int s_qty = 0 ;
+        s_qty += pc_stock;
+        st.setS_qty(s_qty);
+        
+        st.setP_code(2);
+        Purchase_Sale ps = new Purchase_Sale();
+        int result = ps.PCinsert(pc,st);
+        System.out.println(result);
+        
+        System.out.println("입력값 확인");
+        System.out.println("날짜 : " + pc.getPc_date());
+        System.out.println("수량 : " + pc.getPc_stock());
+        System.out.println("단가 : " + pc.getPc_cost());
+        System.out.println("합계 : " + pc.getPc_total());
+       
+    }
+}

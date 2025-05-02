@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>문장 만들기</h1>
+    <hr>
+    <h2 id="sentences">문장을 만들어드릴게요</h2>
+    <button onclick="f()">랜덤 문장 만들기</button>
+
+    <script>
+        //주어
+        let subject = ["첫째가", "둘째가", "셋째가", "넷째가", "다섯째가",
+            "여섯째가", "일곱째가", "여덟째가", "아홉째가", "열째가"];
+
+        //목적어
+        let object = ["학교에서", "헬스장에서", "도서관에서","수영장에서",
+            "학원에서","길거리에서","술집에서"
+        ];
+
+        //서술어
+        let verb = ["공부를합니다", "운동을합니다", "잠을잡니다","춤을 춥니다",
+            "걷고있습니다","글을씁니다","날고있습니다"
+        ];
+
+        const rdNum = Math.random();
+        const sentences = document.getElementById("sentences");
+
+        function f() {
+
+            const rdNumto10s = Math.floor(Math.random() * 10);
+            const rdNumto7o = Math.floor(Math.random() * 7);
+            const rdNumto7v = Math.floor(Math.random() * 7);
+            sentences.innerHTML =
+                `
+            ${subject[rdNumto10s]} 
+            ${object[rdNumto7o]} 
+            ${verb[rdNumto7v]}
+            `
+
+        }
+
+
+    </script>
+</body>
+
+</html>

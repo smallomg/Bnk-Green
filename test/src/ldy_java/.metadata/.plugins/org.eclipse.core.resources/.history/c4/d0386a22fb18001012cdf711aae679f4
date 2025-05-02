@@ -1,0 +1,20 @@
+package jdbc;
+
+public class PointTest {
+
+	public static void main(String[] args) {
+
+		Point org = new Point(3, 5);
+		Point cpy;
+
+		try {
+			cpy = (Point) org.clone();
+			org.showPostion();
+			cpy.showPostion();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

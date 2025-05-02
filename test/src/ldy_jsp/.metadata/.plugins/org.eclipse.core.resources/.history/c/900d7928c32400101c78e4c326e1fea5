@@ -1,0 +1,65 @@
+package ex11;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+
+
+
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 1, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 15)
+/**
+ * Servlet implementation class UploadProServlet
+ */
+@WebServlet("/UploadPro")
+public class UploadProServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public UploadProServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1. upload 폴더지정
+		String uploadPath = request.getServletContext().getRealPath("/images/");
+		System.out.println("uploadPath : " + uploadPath);
+
+		// 2. 일반 파라미터 처리
+		String desc = request.getParameter("desc");
+		System.out.println("desc : " + desc);
+		// 3. 파일처리
+		Part part = request.getPart("imgfile");
+		long size = part.getSize();
+		if (size > 0) {
+			part.write(uploadPath + "/" + part.getSubmittedFileName());
+			part.delete();
+			request.setAttribute("filename", part.getSubmittedFileName());
+			request.getRequestDispatcher("success.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("fail.jsp");
+		}
+	}
+
+}

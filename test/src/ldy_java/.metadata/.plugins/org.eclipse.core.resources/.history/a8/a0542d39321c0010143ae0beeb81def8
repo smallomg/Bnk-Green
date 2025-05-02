@@ -1,0 +1,30 @@
+package collection;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@Getter
+@ToString
+
+// Person 클래스는 불변 값이 정해지면 변경불가
+public class Person implements Comparable<Person> {
+
+	private String name;
+	private int age;
+
+	@Override
+	public int compareTo(Person o) {
+		// 이름 정렬
+		/* int result1 = this.name.compareTo(o.name); */ //오름차순
+		/* int result2 =o.name.compareTo(this.name); */ //내림차순
+		
+		 
+		// 나이 정렬
+		/* return this.age - o.age; */ //오름차순
+		/* return o.age- this.age; */ //내림차순
+		return 0;
+
+	}
+}

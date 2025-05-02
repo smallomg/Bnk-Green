@@ -1,0 +1,92 @@
+package ex12;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class AccountDAO {
+
+	public static Connection getConnection() {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+		String user = "green";
+		String pw = "1234";
+
+		Connection conn = null;
+
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, pw);
+
+			if (conn != null) {
+				System.out.println("DB 접속 성공....");
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return conn;
+	}
+
+	
+
+
+	public void transfer(String fromAccountId, String toAccountId, double amount) throws SQLException {
+		Connection conn = null;
+		PreparedStatement withdrawStmt = null;
+		PreparedStatement depositStmt = null;
+
+		try {
+			conn = getConnection();
+			conn.setAutoCommit(false); // 트랜잭션 시작
+			// 출금 계좌에서 금액 차감
+			String withdrawSql = "UPDATE accounts SET balance = balance - ? WHERE account_id = ? AND balance >= ?";
+			withdrawStmt = conn.prepareStatement(withdrawSql);
+			withdrawStmt.setDouble(1, amount);
+			withdrawStmt.setString(2, fromAccountId);
+			withdrawStmt.setDouble(3, amount);
+			int withdrawResult = withdrawStmt.executeUpdate();
+
+			if (withdrawResult == 0) {
+				throw new SQLException("계좌 부족");
+			}
+
+			// 입금 계좌에서 금액 차감
+			String depositSql = "UPDATE accounts SET balance = balance + ? WHERE account_id = ?";
+			depositStmt = conn.prepareStatement(depositSql);
+			depositStmt.setDouble(1, amount);
+			depositStmt.setString(2, toAccountId);
+			int depositResult = depositStmt.executeUpdate();
+
+			if (depositResult == 0) {
+				throw new SQLException("입금 계좌 없음");
+			}
+
+			conn.commit();
+		} catch (SQLException e) {
+			if (conn != null) {
+				try {
+					conn.rollback();
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+			throw e;
+		} finally {
+			if (withdrawStmt != null) {
+				withdrawStmt.close();
+			}
+			if (depositStmt != null) {
+				depositStmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		}
+	}
+
+}

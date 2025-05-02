@@ -1,0 +1,22 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DBUtilTest {
+
+	public static void main(String[] args) {
+
+		Connection conn;
+		Statement stmt;
+		ResultSet rs;
+		
+		
+		 conn = DBUtil.getConnection();
+		 String query ="SELECT *FROM student";
+		conn = stmt.executeQuery(query)
+
+	}
+
+}

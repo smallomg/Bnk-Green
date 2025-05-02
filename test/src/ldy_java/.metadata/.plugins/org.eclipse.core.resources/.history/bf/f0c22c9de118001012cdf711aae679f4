@@ -1,0 +1,10 @@
+package jdbc;
+
+import lombok.*;
+
+public class Member2 {
+
+	private int mno;
+	private String name;
+	private String phone;
+}

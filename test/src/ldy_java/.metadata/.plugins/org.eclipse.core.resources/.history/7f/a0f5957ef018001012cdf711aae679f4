@@ -1,0 +1,43 @@
+package jdbc;
+
+public class MemberTest {
+
+	public static void main(String[] args) {
+
+		Member2 m1 = new Member2();
+
+		m1.setMno(1);
+		m1.setName("aaa");
+		m1.setPhone("010-1111-1111");
+
+		System.out.println(m1);
+
+		Member2 m2 = new Member2();
+
+		m2.setMno(1);
+		m2.setName("aaa");
+		m2.setPhone("010-1111-1111");
+
+		System.out.println(m2);
+		
+		System.out.print("\n");
+		// m1과 m2를 비교하세요
+		// false 주소값이 다름
+		System.out.println("m1 == m2");
+		System.out.print(m1 == m2);
+		System.out.print("\n");
+		// 인스턴스를 비교를 할때 equals 오버라이딩해라
+		System.out.println("m1.equals(m2)");
+		System.out.print(m1.equals(m2));
+		Member2 m4 = new Member3();
+		m3
+		System.out.println("오버라이딩 : " + m1.equals(m4));
+
+		// m1과 m3는 완벽히 동일함
+		Member2 m3 = m1;
+		System.out.print("\n");
+		System.out.println("m1 == m3");
+		System.out.print(m1 == m3);
+	}
+
+}

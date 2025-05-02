@@ -1,0 +1,6 @@
+package jdbc;
+
+public interface Unit2 {
+
+	void move(String s,int n);
+}

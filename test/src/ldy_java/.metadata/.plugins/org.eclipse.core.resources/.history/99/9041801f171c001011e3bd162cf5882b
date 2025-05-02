@@ -1,0 +1,13 @@
+package Interface;
+
+enum Human3 {
+	MAN, WOMAN
+}
+
+public class EnumConstructorTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

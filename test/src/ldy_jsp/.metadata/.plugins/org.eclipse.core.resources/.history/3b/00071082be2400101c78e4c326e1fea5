@@ -1,0 +1,37 @@
+package ex11;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DBconnPoolTest {
+    public static void main(String[] args) {
+        DBconnPool dbp = new DBconnPool();
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // 커넥션 가져오기
+            conn = dbp.getConnection();
+            
+            // 쿼리 실행
+            stmt = conn.createStatement();
+            String sql = "SELECT SYSDATE FROM dual"; // Oracle 전용
+            rs = stmt.executeQuery(sql);
+
+            if (rs.next()) {
+                System.out.println("현재 오라클 서버 시간: " + rs.getString(1));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 자원 반납
+            try { if (rs != null) rs.close(); } catch (Exception e) {}
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {}
+            dbp.close(); // 커넥션 반환
+        }
+    }
+}

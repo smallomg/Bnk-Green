@@ -1,0 +1,10 @@
+
+4월 29, 2025 17:54:04.99 NEW SESSION
+4월 29, 2025 17:54:05.00 [6200:10576:0429/175404.989:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: https://[*.]google.com,"google,*
+4월 29, 2025 17:54:07.28 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 29, 2025 17:54:07.29 [6200:11088:0429/175407.295:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+4월 29, 2025 17:54:17.62 [6200:10576:0429/175417.626:ERROR:interface_endpoint_client.cc(725)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 29, 2025 17:54:32.45 [6200:11088:0429/175432.450:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+4월 29, 2025 17:55:31.49 [6200:11088:0429/175531.491:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+4월 29, 2025 17:55:48.33 [6200:4384:0429/175548.337:ERROR:cpu_probe_win.cc(134)] PdhGetFormattedCounterValue failed: Error (0x13D) while retrieving error. (0x800007D6)
+4월 29, 2025 17:56:44.22 [6200:10576:0429/175644.226:ERROR:device_event_log_impl.cc(202)] [17:56:44.227] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)

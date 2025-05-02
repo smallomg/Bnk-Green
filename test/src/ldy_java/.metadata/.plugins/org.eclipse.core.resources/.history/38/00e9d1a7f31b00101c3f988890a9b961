@@ -1,0 +1,24 @@
+package stream;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamMidOpsTest {
+
+	public static void main(String[] args) {
+		List<Integer> number = List.of(10, 20, 30, 40, 50, 60, 70);
+
+		List<Integer> results = number.stream()
+				.skip(2) // 2개의 요소를 건너뜀
+				.limit(3) // 요소를 3개로 제한
+				// .forEach(System.out::println);
+				.collect(Collectors.toList());
+
+		System.out.println(results);
+
+		results.stream()
+			   .reduce(0, (a, b) -> a + b); // 0을 기준값으로 데이터 두개를 더한다 더한 값이 앞에 들어가고 다시 뒤로 들어옴
+
+	}
+
+}

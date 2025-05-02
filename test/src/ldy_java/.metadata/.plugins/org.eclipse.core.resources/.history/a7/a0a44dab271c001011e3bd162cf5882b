@@ -1,0 +1,19 @@
+package Interface;
+
+public class MyThread extends Thread {
+	// 프로세스는 하나 이상의 쓰레드를 가진다
+	// 스레드를 만드는 방법 2가지
+	// 1. 스레드를 상속받는다
+	// 스레드를 상속받으면 해야하는 것!
+
+	@Override
+	public void run() {
+		
+		for (int i = 0; i < 10; i++) {
+			System.out.println(Thread.currentThread().getName() + " : " + i);
+		}
+		
+	}
+	
+	
+}

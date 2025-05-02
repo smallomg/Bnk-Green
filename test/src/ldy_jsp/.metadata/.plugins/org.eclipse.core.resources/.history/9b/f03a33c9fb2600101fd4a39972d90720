@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>ID : <input type="text" id="id"></td>
+			<td rowspan="2"><input type="button" value="중복확인"></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td>PW : <input type="password" id="pw"></td>
+		</tr>
+		<tr>
+			<td>PW 확인: <input type="password" id="pwCheck"></td>
+			<td>비밀번호 확인용 텍스트</td>
+		<tr>
+	</table>
+</body>
+</html>

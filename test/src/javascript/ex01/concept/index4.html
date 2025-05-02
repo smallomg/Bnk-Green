@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>onfocus onblur</h1>
+    <form name="frm">
+        onfocus : <input type="text" name="name" onfocus="f1()"><br>
+        onblur : <input type="text" name="name" onblur="f1()"><br>
+        AGE : <input type="text" name="age"><br>
+    </form>
+    <script>
+        function f1() {
+            alert('텍스트 박스에 포커스가 설정되었습니다');
+        }
+    </script>
+
+    <!--  console (F12)
+frm
+<form name=​"frm">​…​</form>​
+frm.age
+<input type=​"text" name=​"age">​
+frm.age.value
+''
+frm.age.value == '';
+true
+frm.age.value == null;
+false
+frm.age.value == undefined;
+false
+frm.age.value = 32;
+32 
+frm.age.value.length; //문자열로 읽음
+2
+typeof(frm.age.value) //타입확인
+'string'
+-->
+    <hr>
+
+    event.prevenDefault();
+
+    <h1></h1>
+    <form name="frm1">
+        TXT1 : <input type="text" name="txt1"><br>
+        TXT2 : <input type="text" name="txt2"> <br>
+        <input type="button" name="btn" onclick="f2()">
+    </form>
+    <script>
+        function f2() {
+            if (frm1.txt1.value == '') {
+                setTimeout(() => {
+                    alert('텍스트를 입력하세요');
+                    frm1.txt1.focus();
+                }, 0)
+            }
+        }
+    </script>
+    <!-- 
+onfocus : 요소에 포커스가 맞춰질 때 실행
+onblur  : 요소에서 포커스가 벗어날 때 실행
+-->
+
+    <!-- 
+event.prevenDefault() : 현재 이벤트의 기본 동작을 막는다
+
+기본 사용법
+function handler(event) {
+    event.preventDefault();
+    // 여기에 원하는 코드 작성
+}
+-->
+
+    <hr>
+
+    <form id="frm2" name="frm2">
+        TXT1 : <input type="text" name="txt1"><br>
+        TXT2 : <input type="text" name="txt2"> <br>
+        <!-- <input type="submit" value="제출"> -->
+        <input type="button" value="제출" onclick="f4()">
+    </form>
+    <script>
+
+        function f4() {
+            const form = document.forms['frm2'];
+            if (form.txt1.value.trim() === '') {
+                alert('txt1 값을 입력하세요.');
+                form.txt1.focus();
+                return;
+            }
+            form.submit();
+        }
+
+        // 폼 요소에 'submit' 이벤트 리스너 등록 → f3 함수 연결
+        document.getElementById('frm2').addEventListener('submit', f3);
+
+        // f3 함수: 폼 제출 이벤트가 발생할 때 실행됨
+        function f3(event) {
+            event.preventDefault(); // 기본 제출 동작(새로고침) 막기
+
+            const form = event.target; // 이벤트가 발생한 폼 요소 가져오기
+            const txt1 = form.txt1.value.trim(); // txt1 입력값에서 공백 제거 후 저장
+
+            // txt1 값이 비어 있으면 알림 띄우고 포커스 이동
+            if (txt1 === '') {
+                alert("txt1 값을 입력하세요.");
+                form.txt1.focus();
+                return;  // 아래 코드 실행하지 않고 종료
+            }
+
+            // ⚠ 문제 부분: form.submit만 참조하고 실행하지 않음
+            // form.submit(); ← 이렇게 괄호를 붙여야 실제로 제출됨
+            form.submit;
+        }
+    </script>
+
+    <hr>
+
+    <form name="frm3" id="frm3" onsubmit="return validateFrom()">
+        TXT1 : <input type="text" name="txt1"><br>
+        TXT2 : <input type="text" name="txt2"> <br>
+        <!-- <input type="button" value="제출"> -->
+        <input type="submit" value="제출">
+        <!-- 
+        type="button"	
+        그냥 클릭용 버튼 
+        (아무 동작 없음, 이벤트 강제로 달아야 동작)
+
+        type="submit"	
+        폼을 제출(submit)**하는 기본 버튼 
+        (폼 안에서 누르면 자동으로 submit 이벤트 발생) 
+        -->
+
+    </form>
+
+    <script>
+        function validateFrom() {
+            const form = document.forms['frm3'];
+            if (form.txt1.value.trim() === '') {
+                alert('txt1 값을 입력하세요.');
+                form.txt1.focus();
+                return false;  // ❗ false 리턴하면 제출 막음
+            }
+            return true;  // 모든 조건 통과하면 제출 허용
+        }
+    </script>
+
+    <hr>
+
+    <h1>Change Event</h1>
+    change event : <input type="text" id="txt3" onchange="f5()">
+
+    <script>
+        function f5(){
+            console.log('change 이벤트 발생 ....');
+
+        }
+    </script>
+    <!-- 
+    change event : 폼 요소의 값이 바뀌었을 때 발생하는 이벤트 
+    언제 발생하나?
+    값이 바뀌고 포커스를 잃을 때 (blur될 때)
+    또는 <select>처럼 선택이 바뀌자마자 발생
+    -->
+
+</body>
+
+</html>

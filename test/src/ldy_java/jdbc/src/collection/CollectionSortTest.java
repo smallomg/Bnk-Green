@@ -1,0 +1,38 @@
+package collection;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class CollectionSortTest {
+
+	public static void main(String[] args) {
+
+		List<String> list = Arrays.asList("홍길동", "전우치", "손오공", "멀린");
+
+		for (String s : list) {
+			System.out.print(s + "\t");
+		}
+		// 불변 자료 이렇게 만들면 변경 불가
+		// list.add("aaa");
+
+		System.out.print("\n");
+		list = new ArrayList<String>(list);
+		list.add("aaa");
+		for (String s : list) {
+			System.out.print(s + "\t");
+		}
+		
+		//오름차순 Collections.sort 
+		//리스트안에 요소에 클래스를 정의할때 Comparable을 정의 해야함
+		Collections.sort(list);
+		System.out.print("\n");
+		for (String s : list) {
+			System.out.print(s + "\t");
+		}
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package test;
+
+public class A {
+	private A instance = new A();
+
+	private A() {
+	};
+
+	public A getIntstance() {
+
+		return instance;
+	}
+
+}

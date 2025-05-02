@@ -1,0 +1,29 @@
+package jdbc;
+
+public class Point {
+
+	private int xPos;
+	private int yPos;
+
+	public Point(int xPos, int yPos) {
+		this.xPos = xPos;
+		this.yPos = yPos;
+	}
+
+	public void showPostion() {
+		System.out.printf("[%d, %d] ", xPos, yPos);
+		System.out.println("");
+	}
+
+	
+	
+	
+	//
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+
+		//Object가 갖고 있는 super
+		return super.clone();
+	}
+
+}

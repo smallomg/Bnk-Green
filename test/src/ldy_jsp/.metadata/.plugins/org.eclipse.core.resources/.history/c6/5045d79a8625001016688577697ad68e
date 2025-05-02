@@ -1,0 +1,13 @@
+package ex12;
+
+import lombok.Data;
+
+@Data
+public class AccountDAO {
+
+	public void transfer(String fromAccountId, String toAccountId, double amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

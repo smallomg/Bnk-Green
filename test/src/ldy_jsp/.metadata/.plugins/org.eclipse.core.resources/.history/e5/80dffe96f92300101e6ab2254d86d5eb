@@ -1,0 +1,56 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import dto.MemberDTO;
+
+public class MemberDAO {
+
+	Connection conn = DBUtil.getConnection();
+
+	public List<MemberDTO> selectAll() {
+		List<MemberDTO> list = new ArrayList<>();
+		String query = "SELECT * FROM tbl_member";
+
+		PreparedStatement psmtm = null;
+		ResultSet rs = null;
+
+		try {
+
+			PreparedStatement pstmp = conn.prepareStatement(query);
+			rs = pstmp.executeQuery();
+			String id = rs.getString("id");
+			String pw = rs.getString("pw");
+			String name = rs.getString("name");
+			String phone = rs.getNString("phone");
+			String grade = rs.getString("grade");
+			while (rs.next()) {
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				DBUtil.close(conn, psmtm, rs);
+			}
+		}
+		return list;
+	}
+
+	public void insert() {
+		String query = "INSERT INTO tbl_member VALUES(?,?,?,?,?)";
+	}
+
+	public void update() {
+		String query = "UPDATE tbl_member SET grade =? WHERE id = ?";
+	}
+
+	public void select() {
+		String query = "SELECT * FROM tbl_member";
+	}
+}

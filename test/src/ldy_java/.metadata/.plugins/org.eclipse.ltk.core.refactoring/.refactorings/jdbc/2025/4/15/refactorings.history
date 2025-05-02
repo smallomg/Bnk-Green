@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;jdbc.JdbcTestSelect&apos; to &apos;JdbcTest_Select&apos;&#x0D;&#x0A;- Original project: &apos;jdbc&apos;&#x0D;&#x0A;- Original element: &apos;jdbc.JdbcTestSelect&apos;&#x0D;&#x0A;- Renamed element: &apos;jdbc.JdbcTest_Select&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;JdbcTestSelect&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;jdbc{JdbcTestSelect.java[JdbcTestSelect" matchStrategy="1" name="JdbcTest_Select" qualified="false" references="true" similarDeclarations="false" stamp="1744251761897" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,32 @@
+package Interface;
+
+enum Member {
+	NAME("이름"), GENDER('F');
+
+	String name;
+	char gender;
+
+	
+
+	private Member(String name,char gender) {
+		this.name = name;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "내이름은" + name + "이고 성별은" + gender + "입니다";
+	}
+}
+
+public class Member1 {
+
+	public static void main(String[] args) {
+		Member member = Member.NAME;
+		
+		for (Member m : Member.values()) {
+			System.out.println(m);
+		}
+
+	}
+
+}

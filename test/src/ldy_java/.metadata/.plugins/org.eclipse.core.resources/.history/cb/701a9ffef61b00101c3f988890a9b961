@@ -1,0 +1,23 @@
+package file;
+
+import java.io.File;
+
+public class FileTest {
+
+	public static void main(String[] args) {
+
+		File file = new File("C:/Temp/jv_test/test.txt");
+
+		// file.exists() : 일이나 폴더가 실제로 존재하는지 확인해서 true/false를 반환합니다.
+		if (file.exists()) {
+			System.out.println("파일이름 : " + file.getName());
+			System.out.println("절대경로 : " + file.getAbsolutePath());
+			System.out.println("파일크기 : " + file.length() + "bytes");
+			
+		}
+		else {
+			System.out.println("파일이 존재하지 않습니다");
+		}
+	}
+
+}

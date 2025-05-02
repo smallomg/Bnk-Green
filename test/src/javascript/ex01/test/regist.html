@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="regist" name="regist">
+        <table border="1">
+            <tr>
+                <td>ID : <input type="text" name="id"></td>
+                <td rowspan="2"><input type="submit" value="중복확인" onclick="f()"></td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="p1">
+                </td>
+            </tr>
+
+            <tr>
+                <td>PW : <input type="password" name="pw"></td>
+            </tr>
+            <tr>
+                <td>PW 확인: <input type="password" name="pwCheck" onblur="f2()"></td>
+                <td>
+                    <p id="p2">
+                </td>
+            <tr>
+        </table>
+    </form>
+    <script>
+
+        const form = document.forms['regist'];
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+
+        function f() {
+            event.preventDefault();
+
+            let a = ['aa', 'a', 'aaa'];
+
+            if (form.id.value.trim() === '') {
+                p1.innerText = 'id 값을 입력하세요.';
+                form.id.focus();
+                return;
+            }
+
+            // 중복 여부 체크용 플래그
+            let isDuplicate = false;
+
+            for (let i = 0; i < a.length; i++) {
+                if (form.id.value.trim() === a[i]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (isDuplicate) {
+                p1.innerText = '중복된 아이디입니다';
+                form.id.focus();
+                return;
+            } else {
+                p1.innerText = '사용가능한 아이디입니다';
+                form.id.focus();
+
+            }
+            setTimeout(() => {
+                form.submit();
+            }, 2000);  // 2초 후 전송
+        }
+
+
+        function f2() {
+            if (form.pw.value.trim() === form.pwCheck.value.trim()) {
+                form.pw.focus();
+                form.pwCheck.focus();
+                p2.innerText = "비밀번호가 같습니다";
+                
+            }
+            else {
+                form.pw.focus();
+                form.pwCheck.focus();
+                p2.innerText = "비밀번호를 확인해 주세요";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

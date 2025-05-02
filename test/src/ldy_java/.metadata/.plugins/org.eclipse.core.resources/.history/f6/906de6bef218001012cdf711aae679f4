@@ -1,0 +1,28 @@
+package jdbc;
+
+import lombok.Setter;
+import lombok.Getter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+public class Member2 {
+
+	private int mno;
+	private String name;
+	private String phone;
+
+	@Override
+	public boolean equals(Object obj) {
+
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+
+		Member2 target = (Member2) obj;
+
+		return mno == target.mno && name.equals(target.name) && phone.equals(target.name);
+	}
+}

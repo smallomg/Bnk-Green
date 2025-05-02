@@ -1,0 +1,15 @@
+package jdbc;
+
+public class BookDAO_Main {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+
+		String url = "jdbc:oracle:this:@localhost:1521:testdb";
+		String id = "green";
+		String pw = "1234";
+
+	}
+
+}

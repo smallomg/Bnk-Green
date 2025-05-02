@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;ex08&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ojdbc11-23.5.0.24.07.jar&#x0D;&#x0A;     jakarta.servlet.jsp.jstl-api-3.0.0.jar&#x0D;&#x0A;     jakarta.servlet.jsp.jstl-3.0.0.jar&#x0D;&#x0A;     lombok-1.18.38.jar" description="Copy files" element1="src/main/webapp/WEB-INF/lib/ojdbc11-23.5.0.24.07.jar" element2="src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" element3="src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.0.jar" element4="src/main/webapp/WEB-INF/lib/lombok-1.18.38.jar" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1745816710786" target="/ex09/src/main/webapp/WEB-INF/lib" units="0" version="1.0"/>
+</session>

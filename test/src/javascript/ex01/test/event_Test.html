@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid black;
+        width: 0px;
+    }
+
+    .item {
+        
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: palevioletred;
+        font-size: 2rem;
+        margin: 2px;
+    }
+</style>
+
+<body>
+    <div class="items">
+        <div id="item0" class="item" onclick="f(event)">0</div>
+        <div id="item1" class="item" onclick="f(event)">1</div>
+        <div id="item2" class="item" onclick="f(event)">2</div>
+        <div id="item3" class="item" onclick="f(event)">3</div>
+        <div id="item4" class="item" onclick="f(event)">4</div>
+        <div id="item5" class="item" onclick="f(event)">5</div>
+        <div id="item6" class="item" onclick="f(event)">6</div>
+        <div id="item7" class="item" onclick="f(event)">7</div>
+        <div id="item8" class="item" onclick="f(event)">8</div>
+        <div id="item9" class="item" onclick="f(event)">9</div>
+    </div>
+    <script>
+        function f(event) {
+            const targetId = event.target.id;
+            console.log(targetId);
+        }
+    </script>
+
+</body>
+
+</html>

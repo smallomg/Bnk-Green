@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #out {
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+    }
+
+    #mid {
+        width: 250px;
+        height: 250px;
+        background-color: red;
+    }
+
+    #in {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+    }
+</style>
+<body>
+    <h1>Event 객체</h1>
+    <hr>
+    <div id="out">
+        <div id="mid">
+            <div id="in"></div>
+        </div>
+    </div>
+
+    <script>
+        // 원래는 mid 클릭시 mid 다음에 out 인데
+        // 이 페이지는 out 다음에 mid
+
+        // mid 클릭시
+        // out
+        // mid
+
+        // in 클릭시 
+        // out
+        // mid
+        // in
+        const inDiv = document.getElementById("in");
+        const midDiv = document.getElementById("mid");
+        const outDiv = document.getElementById("out");
+
+        outDiv.addEventListener('click', function (event) {
+            console.log(event.currentTarget.id);
+        }, true);  // true → 캡처링 단계
+
+        midDiv.addEventListener('click', function (event) {
+            console.log(event.currentTarget.id);
+        }, true);
+
+        inDiv.addEventListener('click', function (event) {
+            console.log(event.currentTarget.id);
+        }, true);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+console.log( )
+var
+let
+const
+
+var 함수 스코프 : 블록({}) 안에서 선언해도 무시하고 함수 전체에서 사용 가능
+let 블록 스코프 : 블록({}) 안에서만 유효
+함수가 아닌데 블록({ })을 갖고 있는 함수 : if for
+
+ex) function f( ) {
+	var a = 10;
+	if(a > 10){
+		let b = 5;
+		var c = 20;
+		//(var a = 'h')
+	}
+	console.log(a); 결과 a = 10
+	console.log(b); 결과 undefined
+	console.log(c); 결과 c = 20
+	//(console.log(a); 결과 a = 'h')
+}
+
+

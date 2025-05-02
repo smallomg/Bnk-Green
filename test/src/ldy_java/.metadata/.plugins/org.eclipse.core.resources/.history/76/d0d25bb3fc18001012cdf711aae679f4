@@ -1,0 +1,23 @@
+package jdbc;
+
+public class Rectangle {
+
+	private Point upperLeft;
+	private Point lowerRight;
+
+	public Rectangle(int x1,int y1,int x2,int y2) {
+		upperLeft = 
+		lowerRight =
+		
+	}
+
+	public void chagePos(int x1, int y1, int x2, int y2) {
+		upperLeft.changePos(x1, x2);
+		lowerRight.changePos(y1, y2);
+	}
+
+	public void showPosition() {
+		System.out.println("좌측 상단 : ");
+		upperLeft.changePos
+	}
+}

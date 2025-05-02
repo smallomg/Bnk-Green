@@ -1,0 +1,14 @@
+package dto;
+
+import lombok.Getter;
+
+@Getter
+
+public class MemberDTO {
+	private final String id;
+	private final String pw;
+	private final String name;
+	private final String phone;
+	private String grade;
+	
+}

@@ -1,0 +1,32 @@
+package thread;
+
+public class ProblemOfThread {
+
+	public static int money = 0;
+
+	public static void main(String[] args) {
+		Runnable task1 = () -> {
+			for (int i = 0; i < 10000; i++) {
+				money++;
+			}
+			System.out.println(money);
+		};
+
+		Runnable task2 = () -> {
+			for (int i = 0; i < 10000; i++) {
+				money--;
+			}
+			System.out.println(money);
+		};
+		
+		Thread t1 = new Thread(task1);
+		Thread t2 = new Thread(task2);
+		
+		t1.start();
+		t2.start();
+		
+		
+		
+	}
+
+}

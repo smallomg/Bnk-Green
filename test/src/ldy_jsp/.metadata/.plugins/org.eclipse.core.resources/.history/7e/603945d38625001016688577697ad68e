@@ -1,0 +1,24 @@
+package ex12;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import lombok.Data;
+
+@Data
+public class AccountDAO {
+
+	public void transfer(String fromAccountId, String toAccountId, double amount) {
+		Connection conn=null;
+		PreparedStatement withdrawStmt = null;
+		PreparedStatement depositStmt = null;
+		
+		try {
+			conn=getConnection();
+			conn.setAutoCommit(false); //트랜잭션 시작
+			
+			//출금 계좌에서 금액 차감
+		}
+	}
+
+}

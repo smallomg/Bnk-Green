@@ -1,0 +1,18 @@
+package management;
+
+import java.sql.Connection;
+
+public class Purchase_Sale {
+	//구매 판매
+	
+	//이미 회원이 있다 치고 
+	//
+	
+	private Connection conn;
+	
+	
+	public Purchase_Sale() {
+		conn = DBConn.getConnection();
+	}
+
+}

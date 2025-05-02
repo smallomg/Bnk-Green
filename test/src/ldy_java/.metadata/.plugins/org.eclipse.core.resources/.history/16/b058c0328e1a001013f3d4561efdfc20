@@ -1,0 +1,14 @@
+package jdbc;
+
+public class LambdaTest1 {
+
+	public static void main(String[] args) {
+		/*
+		 * Unit unit = new Human(); unit.move();
+		 */
+		Unit unit = new Human();
+		unit.move();
+
+	}
+
+}

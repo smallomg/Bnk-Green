@@ -1,0 +1,122 @@
+package management;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import ex05.Board;
+
+public class Purchase_Sale {
+	// 구매 판매
+
+	// 이미 회원이 있다 치고
+	//
+
+	private Connection conn;
+	PreparedStatement psInsertPurchase = null;
+	PreparedStatement psInsertStock = null;
+	PreparedStatement psUpdateStock = null;
+	
+	PreparedStatement saInsertSale = null;
+	PreparedStatement saInsertStock = null;
+	PreparedStatement saUpdateStock = null;
+	
+	private ResultSet rs;
+
+	public Purchase_Sale() {
+		conn = DBConn.getConnection();
+	}
+
+	// 사원이 매입장부를 기재한다
+	public int PCinsert(Purchase purchase, Stock stock) {
+		int result = 0;
+		String query = "INSERT INTO purchase VALUES(seq_pc_code.NEXTVAL,?,?,?,?,?,?,?)";
+		String updateStockQuery = "UPDATE stock SET s_qty = s_qty + ? WHERE p_code = ?";
+		String insertStockQuery = "INSERT INTO stock (s_code, s_qty, p_code) VALUES (seq_st_code.NEXTVAL, ?, ?)";
+		try {
+			conn.setAutoCommit(false); // 트랜잭션 처리
+
+			// 1. purchase insert
+			psInsertPurchase = conn.prepareStatement(query);
+			psInsertPurchase.setDate(1, purchase.getPc_date());
+			psInsertPurchase.setInt(2, purchase.getPc_stock());
+			psInsertPurchase.setInt(3, purchase.getPc_cost());
+			psInsertPurchase.setInt(4, purchase.getPc_total());
+			psInsertPurchase.setInt(5, purchase.getC_code());
+			psInsertPurchase.setInt(6, purchase.getP_code());
+			psInsertPurchase.setInt(7, purchase.getS_code());
+			result += psInsertPurchase.executeUpdate();
+
+			// 2. stock update (기존 상품코드가 존재하는 경우)
+			psUpdateStock = conn.prepareStatement(updateStockQuery);
+			psUpdateStock.setInt(1, stock.getS_qty());
+			psUpdateStock.setInt(2, stock.getP_code());
+			int updateResult = psUpdateStock.executeUpdate();
+
+			// 3. update 결과가 없으면 → 새로 insert
+			if (updateResult == 0) {
+				psInsertStock = conn.prepareStatement(insertStockQuery);
+				psInsertStock.setInt(1, stock.getS_qty());
+				psInsertStock.setInt(2, stock.getP_code());
+				result += psInsertStock.executeUpdate();
+			}
+
+			conn.commit();
+		} catch (SQLException e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	// 사원이 판매장부를 기재한다
+
+	public int SAinsert(Sale sale, Stock stock) {
+		int result = 0;
+	    String query = "INSERT INTO purchase VALUES(seq_pc_code.NEXTVAL,?,?,?,?,?,?,?)";
+	    String updateStockQuery = "UPDATE stock SET s_qty = s_qty - ? WHERE p_code = ?";
+	    String insertStockQuery = "INSERT INTO stock (s_code, s_qty, p_code) VALUES (seq_st_code.NEXTVAL, ?, ?)";
+	    try {
+	        conn.setAutoCommit(false); // 트랜잭션 처리
+
+	        // 1. purchase insert
+	        saInsertSale = conn.prepareStatement(query);
+	        saInsertSale.setDate(1, sale.getSa_date());
+	        saInsertSale.setInt(2, sale.getSa_stock());
+	        saInsertSale.setInt(3, sale.getSa_cost());
+	        saInsertSale.setInt(4, sale.getSa_total());
+	        saInsertSale.setInt(5, sale.getC_code());
+	        saInsertSale.setInt(6, sale.getP_code());
+	        saInsertSale.setInt(7, sale.getS_code());
+	        result += saInsertSale.executeUpdate();
+
+	        // 2. stock update (기존 상품코드가 존재하는 경우)
+	        saUpdateStock = conn.prepareStatement(updateStockQuery);
+	        saUpdateStock.setInt(1, stock.getS_qty());
+	        saUpdateStock.setInt(2, stock.getP_code());
+	        int updateResult = saUpdateStock.executeUpdate();
+
+	        // 3. update 결과가 없으면 → 새로 insert
+	        if (updateResult == 0) {
+	            saInsertStock = conn.prepareStatement(insertStockQuery);
+	            saInsertStock.setInt(1, stock.getS_qty());
+	            saInsertStock.setInt(2, stock.getP_code());
+	            result += saInsertStock.executeUpdate();
+	        }
+
+	        conn.commit();
+	    } catch (SQLException e) {
+	        try { conn.rollback(); } catch (SQLException e1) { e1.printStackTrace(); }
+	        e.printStackTrace();
+	    }
+
+	    return result;
+	}
+
+}

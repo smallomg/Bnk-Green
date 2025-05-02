@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #demo {
+        color: red;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <p>아래에 내용이 추가됩니다.</p>
+
+    </div>
+    <button id="img" onclick="images">
+        d
+    </button>
+    <hr>
+
+
+    <script>
+        const container = document.querySelectorAll('.container')[0];
+        console.log(container.innerText); //결과 : 아래에 내용이 추가됩니다
+
+        const h1 = document.createElement('h1'); //<h1></h1>
+        h1.textContent = '엘리먼트 동적 생성'; //엘리민트 동적 생성
+        h1.setAttribute('id', 'demo'); //h1 id = "demo" 추가
+        h1.setAttribute('class', 'demo'); //h1 class = "demo" 추가
+        console.log(h1);
+
+        container.appendChild(h1);
+        console.log(container);
+
+        //===============================================================
+        function images(){
+        const img = document.querySelectorAll('.img')[0];
+        const make = document.createElement('img');
+        make.setAttribute('src','img/0.jpg');
+        img.appendChild(make);
+        }
+    </script>
+</body>
+
+</html>

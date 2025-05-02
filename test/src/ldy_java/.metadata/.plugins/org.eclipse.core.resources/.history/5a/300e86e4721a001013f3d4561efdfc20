@@ -1,0 +1,29 @@
+package jdbc;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CollectionSortTest {
+
+	public static void main(String[] args) {
+
+		
+		List<String>list =Arrays.asList("홍길동","전우치","손오공","멀린");
+		
+		for(String s :list) {
+			System.out.println(s);
+		}
+		//불변 자료 이렇게 만들면 변경 불가
+		//list.add("aaa");
+		
+		list = new ArrayList<String>(list);
+		list.add("aaa");
+		for(String s :list) {
+			System.out.println(s);
+		}
+		
+	}
+
+}

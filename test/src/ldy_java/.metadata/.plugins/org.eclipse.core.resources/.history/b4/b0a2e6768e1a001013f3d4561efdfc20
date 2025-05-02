@@ -1,0 +1,24 @@
+package jdbc;
+
+public class LambdaTest1 {
+
+	public static void main(String[] args) {
+		/*
+		 * Unit unit = new Human(); unit.move();
+		 */
+		
+		
+		Unit unit = new Unit() { //익명클래스
+
+			@Override
+			public void move() {
+				System.out.println("인간이 움직입니다.");
+				
+			}
+			
+		};
+		unit.move();
+
+	}
+
+}

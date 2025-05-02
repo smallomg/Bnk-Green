@@ -1,0 +1,12 @@
+package jdbc;
+
+public class PersonSortTest {
+
+	public static void main(String[] args) {
+		
+		Person p1 = new Person("aaa",20);
+		
+		p1.setAge(20);
+	}
+
+}

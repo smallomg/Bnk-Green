@@ -1,0 +1,32 @@
+package Interface;
+
+enum Animal1{
+	DOG,CAT
+}
+enum Person1{
+	MAN,WOMAN
+}
+
+public class SafeEnumTest {
+
+	public static void main(String[] args) {
+
+		who(Person1.MAN);
+		who(Animal.DOG);
+		
+		
+	}
+	
+	public static void who(int man) {
+		switch (man) {
+		case Person.MAN:
+			System.out.println("남성 손님입니다");
+			break;
+
+		case Person.WOMAN:
+			System.out.println("여성 손님입니다");
+			break;
+
+		}
+
+}

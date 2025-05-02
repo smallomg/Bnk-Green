@@ -1,0 +1,52 @@
+package Interface;
+
+import lombok.Data;
+
+enum Gender {
+	MALE, FEMALE;
+}
+
+enum Level {
+	GOLD("골드", 0.1), SILVER("실버", 0.05), BRONZE("브론즈", 0.02);
+
+	String korName;
+	double discountRate;
+	int discountCost;
+
+	private Level(String korName, double discountRate) {
+		this.korName = korName;
+		this.discountRate = discountRate;
+	}
+
+	public int calculateDiscount(int price) {
+		discountCost = (int) (price - (price*discountRate));
+		return discountCost;
+	}
+
+}
+
+@Data
+public class User {
+
+	int code;
+	String name;
+	Gender gender;
+	Level level;
+
+	void pay(int price) {
+
+	}
+
+	public User(int code, String name, Gender gender, Level level) {
+		this.code = code;
+		this.name = name;
+		this.gender = gender;
+		this.level = level;
+	}
+
+	public static void main(String[] args) {
+		User u = new User(1, "James", Gender.MALE, Level.GOLD);
+		
+	}
+
+}

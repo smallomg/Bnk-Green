@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+    String result = request.getParameter("result");
+    String userid = (String) session.getAttribute("userid");
+
+    int[] score = (int[]) session.getAttribute(userid + "_score");
+    if (score == null) {
+        score = new int[]{0, 0, 0};
+    }
+
+    if ("win".equals(result)) score[0]++;
+    else if ("lost".equals(result)) score[1]++;
+    else if ("draw".equals(result)) score[2]++;
+
+    session.setAttribute(userid + "_score", score);
+%>
+
+<h2><%= (score[0] + score[1] + score[2]) %>전 <%= score[0] %>승 <%= score[1] %>패 <%= score[2] %>무</h2>

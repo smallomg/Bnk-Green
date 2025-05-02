@@ -1,0 +1,32 @@
+package jdbc;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class Stream1 {
+
+	public static void main(String[] args) {
+
+		// Stream 연산은 기존자료를 변경하지 않는다.
+		// Stream 연산은 중간연산과 최종연산으로 구성
+		// Stream 한번 생성된 연산은 재사용 불가
+		int[] arr = { 1, 2, 3, 4, 5 };
+
+		// 1. 스트림 생성
+		IntStream stm1 = Arrays.stream(arr);
+
+		// 2. 중간 연산
+		IntStream stm2 = stm1.filter(n -> n % 2 == 1);
+
+		// 3. 최종 연산
+		int sum = stm2.sum();
+		System.out.println("홀수의 합 : " + sum);
+
+		
+		int sum2 = Arrays.stream(arr)
+				.filter(n -> n % 2 == 0)
+				.sum();
+		System.out.println("짝수의 합 : " + sum2);
+	}
+
+}

@@ -1,0 +1,94 @@
+package management;
+
+import java.sql.Date;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+
+		// 매입장부 기재
+		if (input == 1) {
+			System.out.println("입고장부");
+			System.out.println("날짜를 입력해주세요 ex)2025-04-17");
+			String dateStr = sc.next();
+			Date pc_date = Date.valueOf(dateStr);
+
+			System.out.println("입고수량을 적어주세요");
+			int pc_stock = sc.nextInt();
+			sc.nextLine();
+			System.out.println("상품단가를 적어주세요");
+			int pc_cost = sc.nextInt();
+			sc.nextLine();
+
+			int pc_total = pc_stock * pc_cost;
+
+			Purchase pc = new Purchase();
+			Stock st = new Stock();
+			pc.setPc_date(pc_date);
+			pc.setPc_stock(pc_stock);
+			pc.setPc_cost(pc_cost);
+			pc.setPc_total(pc_total);
+			pc.setC_code(1);
+			pc.setP_code(1);
+			pc.setS_code(1);
+
+			int s_qty = 0;
+			s_qty += pc_stock;
+			st.setS_qty(s_qty);
+
+			st.setP_code(2); // Stock 재고 상품코드 상품코드에 따라 수량 바뀜
+			Purchase_Sale ps = new Purchase_Sale();
+			ps.PCinsert(pc, st);
+
+		}
+
+		// 출고장부 기재
+		if (input == 2) {
+			Sale sa = new Sale();
+			Stock st = new Stock();
+
+			
+			System.out.println("출고장부");
+			System.out.println("날짜를 입력해주세요 ex)2025-04-17");
+			String dateStr = sc.next();
+			Date sa_date = Date.valueOf(dateStr);
+
+			System.out.println("출고수량을 적어주세요");
+			int sa_stock = sc.nextInt();
+			sc.nextLine();
+			System.out.println("상품단가를 적어주세요");
+			int sa_cost = sc.nextInt();
+			sc.nextLine();
+
+			int sa_total = (int) (sa_stock * (sa_cost * 0.9));
+
+			sa.setSa_date(sa_date);
+			sa.setSa_stock(sa_stock);
+			sa.setSa_cost(sa_cost);
+			sa.setSa_total(sa_total);
+			sa.setC_code(1);
+			sa.setP_code(1);
+			sa.setS_code(1);
+
+			int s_qty = sa_stock;
+			st.setS_qty(s_qty);
+
+			st.setP_code(1);// Stock 재고 상품코드 상품코드에 따라 수량 바뀜
+			Purchase_Sale ps = new Purchase_Sale();
+			ps.SAinsert(sa, st);
+			
+			if (sa.getSa_stock() <= 0) {
+				System.out.println("재고가 없습니다.");
+				while (true) {
+					break;
+				}
+			}
+		}
+
+		// 나중에 st.setP_code(2); == pc.setP_code(1);는 같아야함
+
+	}
+}

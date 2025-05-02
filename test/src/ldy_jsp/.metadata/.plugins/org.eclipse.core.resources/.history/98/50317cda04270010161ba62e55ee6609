@@ -1,0 +1,68 @@
+package ex13;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+
+
+/**
+ * Servlet implementation class RegistServlet
+ */
+@WebServlet("/RegistServlet")
+public class RegistServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegistServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String pwCheck = request.getParameter("pwCheck");
+		
+		String a[] = {"a","aa","aaa"};
+		
+		if (id.equals(null)) {
+			request.setAttribute("p1Text", "id 값을 입력하세요.");
+		}
+		
+		Boolean tf = false;
+		
+		for(int i =0;i<a.length;i++) {
+			if (id.equals(a[i])) {
+				tf = true;
+				break;
+			}
+		}
+		
+		if (tf) {
+			request.setAttribute("p1Text", "중복된 아이디입니다.");
+        } else {
+        	request.setAttribute("p1Text", "사용가능한 아이디입니다.");
+        }
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+
+}

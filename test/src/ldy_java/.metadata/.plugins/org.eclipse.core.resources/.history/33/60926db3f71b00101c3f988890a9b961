@@ -1,0 +1,21 @@
+package file;
+
+import java.io.FileWriter;
+
+public class FileWriterTest {
+
+	public static void main(String[] args) {
+
+		try {
+			FileWriter fw = FileWriter("C:/Temp/jv_test/test.txt");
+			
+			fw.write("Hello, java File I/O 를 연습중입니다.");
+			fw.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

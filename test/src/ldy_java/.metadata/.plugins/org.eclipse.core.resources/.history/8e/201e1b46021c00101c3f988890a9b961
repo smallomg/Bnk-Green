@@ -1,0 +1,62 @@
+package test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Diary {
+	static FileReader fr;
+	static BufferedReader br;
+	static int count = 0;
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("제목을 입력해주세요");
+		String input_title = sc.next();
+
+		System.out.println("내용을 입력해주세요");
+		String input_content = sc.next();
+		sc.close();
+		try {
+			FileWriter fw = new FileWriter("C:/Temp/jv_test/diary.txt", true);
+
+			fw.write(count + "제목 : " + input_title + "\n");
+			fw.write(count + "내용 : " + input_content + "\n");
+			fw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			FileReader fr = new FileReader("C:/Temp/jv_test/diary.txt");
+			BufferedReader br = new BufferedReader(fr);
+
+			String s = null;
+			while ((s = br.readLine()) != null) {
+				System.out.println(s);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (br != null)
+					br.close(); // null 아닐 때만 닫기
+				if (fr != null)
+					fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		count++;
+	}
+
+}

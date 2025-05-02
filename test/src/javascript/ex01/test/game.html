@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 아스키 코드 변환</h1>
+    <hr>
+    <input type="text" id="textbox" name="textbox">
+    <button onclick="f()">변환</button>
+    <p id="ptag">p태그</p>
+
+    <hr>
+    <h2>Game</h2>
+    <input type="text" id="game">
+    <button onclick="game()">게임</button>
+    <p id ="tf">true/ false</p>
+
+    <script>
+        const textbox = document.getElementById("textbox");
+        const ptag = document.getElementById("ptag");
+        const A ="A";
+        const Z ="Z";
+
+        function f() {
+            const ch = textbox.value;
+            if (A.charCodeAt(0)<= ch.charCodeAt(0) && ch.charCodeAt(0) <= Z.charCodeAt(0)) {
+                ptag.innerText = ch.charCodeAt(0);
+            }
+            else if (A.toLowerCase().charCodeAt(0) <= ch.charCodeAt(0) && ch.charCodeAt(0) <= Z.toLowerCase().charCodeAt(0)) {
+                ptag.innerText = ch.charCodeAt(0);
+            }
+            else { ptag.innerText = "A~Z , a~z를 입력해주세요" }
+        }
+
+        //======================================================================
+        const rdNum = Math.random();
+        const rdNumtoA = Math.floor(Math.random() * 25 + 65);
+        const rdNumtoa = Math.floor(Math.random() * 25 + 97);
+        const rdNumzo = Math.floor(Math.random() * 2);
+
+        const rdNumAa = [rdNumtoA,rdNumtoa];
+
+        const tf = document.getElementById("tf");
+
+        
+
+        function game(){
+            const game = document.getElementById("game");
+            const gameNum = game.value;
+
+            if(rdNumAa[rdNumzo]===gameNum.charCodeAt(0)){
+                tf.innerText = "정답입니다";
+            }
+            else if(gameNum.charCodeAt(0) < rdNumAa[rdNumzo]){
+                tf.innerText = "랜덤 수가 더 큽니다";
+            }
+            else if(gameNum.charCodeAt(0) > rdNumAa[rdNumzo]){
+                tf.innerText = "입력하신 값이 더 큽니다";
+            }
+            else {
+                tf.innerText = "A~Z , a~z를 입력하세요";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

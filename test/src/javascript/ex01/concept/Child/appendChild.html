@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" class="tb1">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+
+    </table>
+    <button onclick="f()">테이블 데이터 추가</button>
+
+    <script>
+        const arr = ['a', 'b', 'c'];
+        const tbody = document.getElementById("tbody");
+        tbody.textContent = " ";
+
+        function f() {
+            
+            
+            for (let i = 0; i < arr.length; i++) {
+                const tr = document.createElement('tr');
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+
+            td1.textContent = `${i}`;
+            td2.textContent = `${arr[i]}`;
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+            
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

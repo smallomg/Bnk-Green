@@ -1,0 +1,24 @@
+package ex11;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+
+public class DBconnPool {
+	Context initCtx = new InitialContext();
+	
+	public DBconnPool() {
+		try {
+			Context initContext = new InitialContext();
+		}catch (Exception e) {
+            e.printStackTrace();
+		
+		
+	}
+	
+	public void close() {
+		try {
+			if(conn != null)conn.close();
+		}
+	}
+}

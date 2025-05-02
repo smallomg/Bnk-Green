@@ -1,0 +1,17 @@
+package Interface;
+
+import lombok.Data;
+
+@Data
+public class Member {
+
+	public static void main(String[] args) {
+		Member m = new Member();
+		m.se
+		for (Member m : Member.values()) {
+			System.out.println(m);
+		}
+
+	}
+
+}

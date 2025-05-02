@@ -1,0 +1,13 @@
+package ex10;
+
+public class DAO {
+	
+	
+	
+	
+	public int insert() {
+		
+		return 0;
+	}
+	
+}

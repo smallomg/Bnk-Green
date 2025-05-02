@@ -1,0 +1,17 @@
+package thread;
+
+public class SyncMethodTest {
+
+	public static int money = 0;
+
+	public static void main(String[] args) {
+
+		Runnable task1 = () -> {
+			for (int i = 0; i < 10000; i++) {
+				deposit();
+			}
+		};
+
+	}
+
+}

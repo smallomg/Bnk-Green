@@ -1,0 +1,13 @@
+package jdbc;
+
+public class RectangleTest {
+
+	public static void main(String[] args) {
+
+		Rectangle org = new Rectangle(1, 1, 9, 9);
+		org.showPosition();
+		org.chagePos(2, 2, 8, 8);
+		org.showPosition();
+	}
+
+}

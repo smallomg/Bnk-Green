@@ -1,0 +1,10 @@
+package jdbc;
+
+public class Human implements Unit{
+
+	@Override
+	public void move() {
+		
+	}
+
+}

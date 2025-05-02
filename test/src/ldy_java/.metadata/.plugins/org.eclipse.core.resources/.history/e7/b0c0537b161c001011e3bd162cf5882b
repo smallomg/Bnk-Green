@@ -1,0 +1,17 @@
+package Interface;
+
+enum Animal1{
+	DOG,CAT
+}
+enum Person1{
+	MAN,WOMAN
+}
+
+public class SafeEnumTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

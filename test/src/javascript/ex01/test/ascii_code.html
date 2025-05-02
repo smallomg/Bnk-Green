@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 아스키 코드 변환</h1>
+    <hr>
+    <input type="text" id="textbox" name="textbox">
+    <button onclick="f()">변환</button>
+    <p id="ptag">p태그</p>
+
+
+
+    <script>
+        const textbox = document.getElementById("textbox");
+        const ptag = document.getElementById("ptag");
+
+
+        function f() {
+            const ch = textbox.value;
+            if (65 <= ch.charCodeAt(0) && ch.charCodeAt(0) <= 90) {
+                ptag.innerText = ch.charCodeAt(0);
+            }
+            else if (97 <= ch.charCodeAt(0) && ch.charCodeAt(0) <= 122) {
+                ptag.innerText = ch.charCodeAt(0);
+            }
+            else { ptag.innerText = "A~Z , a~z를 입력해주세요" }
+        }
+
+        // 소문자 a~z
+        // 대문자 a~z 동작
+    </script>
+
+</body>
+
+</html>

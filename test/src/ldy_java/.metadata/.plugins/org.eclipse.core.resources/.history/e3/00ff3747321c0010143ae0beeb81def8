@@ -1,0 +1,82 @@
+package jdbc;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import ex05.Board;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		DBConn conn = new DBConn();
+
+		BookDAO dao = new BookDAO();
+
+		for (;;) {
+			System.out.println("종료 : [0]\t책조회 : [1]\t책작성 : [2]\t책삭제 : [3]");
+			int input = sc.nextInt();
+
+			if (input == 0) {
+				break;
+			}
+			// 책조회
+			if (input == 1) {
+				List<Book> list = null;
+				System.out.println("0: 뒤로가기 1 : 전체조회 2:선택조회");
+				int selecinput = sc.nextInt();
+				if (selecinput == 0) {
+					for (;;) {
+						break;
+					}
+				}
+				if (selecinput == 1) {
+
+					list = dao.select();
+
+					for (Book b : list) {
+						System.out.println(b);
+					}
+				}
+				if (selecinput == 2) {
+					System.out.print("조회할 코드을 작성하세요 >> ");
+					int bno = sc.nextInt();
+					list = dao.select(bno);
+
+					for (Book b : list) {
+						System.out.println(b);
+					}
+				}
+			}
+			// 책 작성
+			if (input == 2) {
+				int bno = Book.cnt++;
+				System.out.println("책 제목을 입력해주세요");
+				String title = sc.next();
+				System.out.println("책 저자를 입력해주세요");
+				String writer = sc.next();
+				System.out.println("책 출판사를 입력해주세요");
+				String publisher = sc.next();
+				System.out.println("책 가격을 입력해주세요");
+				int price = sc.nextInt();
+
+				Book book = new Book();
+				book.setBno(bno);
+				book.setTitle(title);
+				book.setWriter(writer);
+				book.setPublisher(publisher);
+				book.setPrice(price);
+
+				dao.insert(book);
+			}
+			if (input == 3) {
+				System.out.println("책 코드를 적어주시면 삭제됩니다");
+				int bno = sc.nextInt();
+				dao.delete(bno);
+			}
+		}
+
+	}
+
+}

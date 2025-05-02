@@ -1,0 +1,44 @@
+package management;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//로그인 회원가입
+		//회원가입
+		// 구매/ 판매
+		// 실적
+
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("날짜를 입력해주세요 ex)2025-04-17");
+		String pc_date = sc.next();
+		
+		System.out.println("입고수량을 적어주세요");
+		int pc_stock = sc.nextInt();
+		
+		System.out.println("상품단가을 적어주세요");
+		int pc_cost = sc.nextInt();
+		
+		int pc_total = pc_stock * pc_cost;
+		
+		
+		Purchase pc = new Purchase();
+
+		pc.setPc_date(pc_date);
+		pc.setPc_stock(pc_stock);
+		pc.setPc_stock(pc_cost);
+		pc.setPc_total(pc_total);
+		
+		pc.setC_code(301);  // 예: 세종상사
+		pc.setP_code(201);  // 예: 볼펜
+		pc.setS_code(101);  // 예: 김철수
+		
+		Purchase_Sale ps = new Purchase_Sale();
+		int result = ps.PCinsert(pc);
+		System.out.println(result > 0 ? "매입 등록 완료!" : "매입 실패!");
+	}
+
+}

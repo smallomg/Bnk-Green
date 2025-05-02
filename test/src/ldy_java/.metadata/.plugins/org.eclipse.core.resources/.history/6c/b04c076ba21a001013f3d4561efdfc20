@@ -1,0 +1,21 @@
+package jdbc;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class StreamSortedTest {
+
+	public static void main(String[] args) {
+
+		List<String> list = Arrays.asList("홍길동", "멀린", "해리포터");
+
+		list.stream() // 스트림 생성
+				.sorted() // 정렬(중간연산)
+				.forEach(n -> System.out.println(n + "\t")); // 요소를 하나씩 꺼내서 소비함.(최종연산)
+
+		list.stream() // 스트림 생성
+				.sorted((s1, s2) -> s1.length() - s2.length()) // 정렬(중간연산 : 문자열의 길이(오름차순))
+				.forEach(n -> System.out.println(n + "\t")); // 최종연산
+	}
+
+}

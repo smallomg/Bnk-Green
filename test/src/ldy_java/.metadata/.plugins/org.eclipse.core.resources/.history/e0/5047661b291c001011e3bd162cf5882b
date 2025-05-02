@@ -1,0 +1,17 @@
+package Interface;
+
+public class MyThreadTest {
+
+	public static void main(String[] args) {
+
+		MyThread t1 = new MyThread();
+		t1.setName("Thread-A");
+
+		// run메소드를 직접호출하면 안됨 스레드가 동작 안함
+		// start메소드가 run메소드 를 호출함
+		t1.start();
+		
+		System.out.println("-----End of Main-----");
+	}
+
+}

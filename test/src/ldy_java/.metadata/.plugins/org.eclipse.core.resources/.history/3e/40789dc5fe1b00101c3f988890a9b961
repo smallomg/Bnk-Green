@@ -1,0 +1,54 @@
+package file;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderTest {
+	static FileReader fr;
+	static BufferedReader br;
+
+	public static void main(String[] args) {
+
+		try {
+			FileReader fr = new FileReader("C:/Temp/jv_test/test.txt");
+
+			// EOF = End Of File 파일의
+			// 파일은 끝은 정수로 표현하는데 -1임
+			int data = 0;
+			while ((data = fr.read()) != -1) { // data가 -1이 아닌동안 반복
+				System.out.print((char) data);
+			}
+			fr.close();
+
+			// ================================================================
+			fr = new FileReader("C:/Temp/jv_test/test.txt");
+			BufferedReader br = new BufferedReader(fr);
+
+			System.out.println("버퍼 사용하기");
+			String s = null;
+			while ((s = br.readLine()) != null) { // br 버퍼가 문장이 끝날때 까지 엔터가 될때까지 출력
+				System.out.println(s);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		finally {
+			try {
+				br.close();
+				fr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+}

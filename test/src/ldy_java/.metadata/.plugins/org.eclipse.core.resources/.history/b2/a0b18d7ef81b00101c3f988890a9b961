@@ -1,0 +1,28 @@
+package file;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterTest {
+
+	public static void main(String[] args) {
+
+		try {
+			FileWriter fw = new FileWriter("C:/Temp/jv_test/test.txt");
+			fw.write("Hello, java File I/O 를 연습중입니다.");
+			fw.close();
+
+			System.out.println("파일에 문자열을 성공적으로 썼습니다");
+
+			fw = new FileWriter("C:/Temp/jv_test/test.txt",true);
+			fw.write("\n 이어서 씁니다. Hellow Java File I/0를 연습중입니다 /n");
+			fw.close();
+
+			System.out.println("파일에 문자열을 성공적으로 썼습니다");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

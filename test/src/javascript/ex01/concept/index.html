@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #demo {
+        color: red;
+    }
+</style>
+
+<body>
+    <h1>Test</h1>
+    <!-- <p id="demo">....</p>
+    <button onclick="f()">f1 실행</button>
+
+    <hr>
+    <input type="text" id="txt" value="-----">
+    <button onclick="f2()">f2 실행(받기)</button>
+    <button onclick="f3()">f3 실행(쓰기)</button> -->
+
+
+
+    <!-- //console.log( )
+var
+let
+const
+
+var 함수 스코프 : 블록({}) 안에서 선언해도 무시하고 함수 전체에서 사용 가능
+let 블록 스코프 : 블록({}) 안에서만 유효
+
+함수가 아닌데 블록({ })을 갖고 있는 함수 : if for
+
+var x = 값은 초기값undefined로 정해진다
+
+호이스팅 : 변수 선언문과 함수 정의문 코드 상단으로 끌어올려진다.
+
+ex) function f( ) {
+	var a = 10;
+	if(a > 10){
+		let b = 5;
+		var c = 20;
+		//(var a = 'h')
+	}
+	console.log(a); 결과 a = 10
+	console.log(b); 결과 undefined
+	console.log(c); 결과 c = 20
+	//(console.log(a); 결과 a = 'h')
+} -->
+
+
+
+    <script>
+        // var x;
+        // console.log(x);
+        // var x = 10;
+        // // var x = 값은 초기값undefined로 정해진다
+
+        // console.log(y);
+        // let y = 20;
+
+        // // 호이스팅 : 변수 선언문과 함수 정의문 코드 상단으로 끌어올려진다.
+        // f();
+        // function f() {
+        //     alert("f함수")
+        // }
+
+        // f1();
+        // function f1() {
+        //     var a = 10;
+        //     console.log(a);
+        // }
+        // console.log(a);
+        // var a = 10;
+
+        // f2();
+        // function f2() {
+        //     {
+        //         let b = 10;
+        //     }
+        //     console.log(b);
+        //     let b = 100;
+        // }
+        // console.log(b);
+
+        // // 함수의 기본형태
+        // function f(a){
+        //     return a-3;  // 리턴이 있다 = 값으로 남는다
+        // }
+
+        // let result = f();
+        // console.log(result); //NaN 값이 아니다! 라는 뜻
+
+        // document 이 페이지 자체
+        // const demo = document.getElementById("demo");
+        // document.querySelector("#demo"); 
+        // #demo는 id="demo"를 말함 //그냥 demo는 <demo>~</demo>를 말함
+        // 객체.innerText = "출력할 내용";
+        // demo.innerText ="abcd";
+        // 객체.innerHTML = "출력할 내용" html을 문자열로 인식
+        // demo.innerHTML ="<h2>xyz</h2>";
+
+        // function f() {
+        //     document.querySelector("#demo");
+        //     demo.innerHTML = "<h2>xyz</h2>";
+        // }
+        // const demo = document.getElementById("demo");
+        // const txt = document.getElementById("txt");
+        // function f2() {
+        //     txt.value = demo.innerText;
+        // }
+        // function f3() {
+        //     demo.innerText = txt.value;
+        // }
+
+        // //템플릿 문자열
+        // let a = 5;
+        // let b = 10;
+        // console.log("a + b = " + (a + b));
+        // console.log(`a + b = ${a + b}`);
+        // //벡틱( ` ) : 여러 줄 문자열을 쓰거나, 
+        // // 문자열 안에 변수를 쉽게 넣을 때 사용하는 문자열 기호
+
+        // //랜덤 수
+        // const rdNum = Math.random();
+        // console.log(rdNum);
+
+        // //1~10 사이의 랜덤수
+        // const rdNumto10 = Math.floor(Math.random() * 10 + 1);
+        // console.log(rdNumto10);
+        // //floor 내림값
+
+        // for (let i = 0; i < 10; i++) {
+        //     console.log(i);
+        // }
+
+        // let cnt = 0;
+        // while (cnt < 5) {
+        //     console.log(cnt++);
+        //     if (cnt == 3) break;
+        // }
+
+        // console.log(100 == "100");//결과 : true 타입이 다르면 자동으로 맞춰줌 
+        // console.log(100 === '100');//결과 : false 타입까지 완전히 같아야 true
+
+
+        // const user = { no: 1, name: 'James' };
+        // console.log(user.no);
+        // console.log(user['no']);
+        // console.log(user.name);
+        // console.log(user['name']);
+        // console.log(user);
+
+
+        // //배열
+        // let fruit = ['apple', 'banana', 'cherry'];
+        // console.log(fruit[0]);
+        // console.log(fruit[1]);
+        // console.log(fruit[2]);
+        // console.log(fruit.length);
+
+        // // 마지막에 값을 넣는다
+        // fruit.push('peach');
+        // console.log(fruit);
+
+        // // 첫번째에 값을 넣는다
+        // fruit.unshift('melon');    
+        // console.log(fruit);
+
+        // // 마지막 값을 뺀다
+        // fruit.pop(); 
+        // console.log(fruit);
+
+        // // 첫번째 값을 뺀다
+        // fruit.shift();
+        // console.log(fruit);
+
+        //2025-04-30
+        let str = "Hello World";
+        //includes("문자열") : 있다면 true, 없다면 false,
+        console.log(str.includes(" "));
+
+        str = "abcdef";
+        // 문자열 인덱스 2부터 5앞까지 출력
+        console.log(str.slice(2, 5));
+        console.log(str);
+
+        str = "JavaScript";
+        console.log(str.toLowerCase());
+        console.log(str.toUpperCase());
+
+        str = "I like apples";
+        console.log(str.replace("apples", "bananas"));
+
+        str = "red,green,blue";
+        let colors = str.split(",");
+        console.log(colors);
+        console.log(colors[0]);
+        console.log(colors[1]);
+        console.log(colors[2]);
+        console.log(colors.length);
+
+        str = "   Hello   ";
+        console.log(str.trim());
+
+        let numStr = "S";
+        console.log(numStr.padStart(3,"0"));
+        console.log(numStr.padEnd(3,"#"));
+        console.log(numStr);
+
+        str = "ABC";
+        console.log(str.charAt(0));
+        //charCodeAt(문자) : 아스키 코드 값 
+        console.log(str.charCodeAt(0));
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #item {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: palevioletred;
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+    <h1>Event 객체</h1>
+    <hr>
+    <div id="item" onclick="f(event)">1</div>
+
+
+    <script>
+        // function f(){
+        //     alert('click !!! 1')
+        // }
+
+        function f(event) {
+            //console.log(event);
+            //console.log(event.target); // .target : 이벤트를 발생시킨 요소를 알려주는 
+            //console.log(event.target.id);  // id = item
+            //console.log(event.target.innerText); //innerText = 1
+            //console.log(event.target.tagName); //tagName = DIV
+
+            const targetTagName = event.target.tagName;
+            // 대소문자 구분해야함 
+            if (targetTagName === 'DIV') {
+                console.log('div 태그입니다');
+            } else {
+                console.log('div 태그가 아닙니다');
+            }
+
+            // 이벤트 버블링
+            // 자식을 실행시켰을때  자식 실행되고 부모 실행 
+
+            // 이벤트 피쳐링
+            // 자식을 실행시켰을때 부모가 먼저 실행되고 자식 실행
+        }
+
+    </script>
+</body>
+
+</html>

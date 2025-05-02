@@ -1,0 +1,43 @@
+package file;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FinallyTest {
+
+	public static void main(String[] args) {
+		FileReader fr = null;
+		try {
+			fr = new FileReader("C:/Temp/jv_test/test.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("----Start----");
+		BufferedReader br = new BufferedReader(fr);
+		try {
+			// 해야할 일(기능)
+			String s = null;
+			System.out.println(s.charAt(0));
+		}
+
+		catch (NullPointerException e) {
+			// 문제가 생기면 ... 문제가 생겼다고 알려주고 ... 프로그램을 지속해야 한다.
+			System.out.println("s에 문자열이 담겨있지 않습니다.");
+		}finally {
+			// 오류가 발생하든 안하든 기능 수행. (예시 .close())
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("반드시 ... 해야 할일을 하지.");
+		}
+		System.out.println("----End----");
+
+	}
+
+}

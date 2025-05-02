@@ -1,0 +1,30 @@
+package jdbc;
+//마커클래스 복제가능한 클래스
+public class Point implements Cloneable{
+
+	private int xPos;
+	private int yPos;
+
+	public Point(int xPos, int yPos) {
+		this.xPos = xPos;
+		this.yPos = yPos;
+	}
+
+	public void showPostion() {
+		System.out.printf("[%d, %d] ", xPos, yPos);
+		System.out.println("");
+	}
+
+	
+	
+	
+	// clone을 사용하기 위해서는 implements Cloneable
+	
+	@Override
+	static Object clone() throws CloneNotSupportedException {
+
+		//Object가 갖고 있는 super
+		return super.clone();
+	}
+
+}

@@ -1,0 +1,43 @@
+package jdbc;
+
+import collection.Unit2;
+
+public class LambdaTest1 {
+
+	public static void main(String[] args) {
+		/*
+		 * Unit unit = new Human(); unit.move();
+		 */
+
+		/*
+		 * Unit unit = new Unit() { //익명클래스
+		 * 
+		 * @Override public void move() { System.out.println("인간이 움직입니다.");
+		 * 
+		 * }
+		 * 
+		 * }; unit.move();
+		 */
+
+		// 인테페이스 메서드 하나일 경우 쓸수 있다
+		// 인터페이스에 메서드가 2개이상이면 쓸수 없다
+		/*
+		 * Unit unit = () -> { System.out.println("인간이 움직입니다.");
+		 * 
+		 * };
+		 * 
+		 * unit.move();
+		 */
+
+		// 매개변수가 하나 일때 가능
+		Unit2 unit = s -> {
+			System.out.println(s);
+			return s.length();
+		};
+
+		int result = unit.move("move move...");
+		System.out.println(result);
+
+	}
+
+}

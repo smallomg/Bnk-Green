@@ -1,0 +1,43 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MemberDAO {
+
+	Connection conn = DBUtil.getConnection();
+
+	public void selectAll() {
+		String query = "SELECT * FROM tbl_member";
+
+		PreparedStatement psmtm;
+		ResultSet rs;
+
+		try {
+			PreparedStatement pstmp = conn.prepareStatement(query);
+			rs = pstmp.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally
+		
+		
+		{
+			DBUtil.close();
+		}
+	}
+
+	public void insert() {
+		String query = "INSERT INTO tbl_member VALUES(?,?,?,?,?)";
+	}
+
+	public void update() {
+		String query = "UPDATE tbl_member SET grade =? WHERE id = ?";
+	}
+
+	public void select() {
+		String query = "SELECT * FROM tbl_member";
+	}
+}

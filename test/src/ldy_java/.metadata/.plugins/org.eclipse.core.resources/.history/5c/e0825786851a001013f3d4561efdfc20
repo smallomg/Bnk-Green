@@ -1,0 +1,18 @@
+package jdbc;
+
+public class Outer {
+
+	private int speed = 10;
+
+	class MemberInner1 {
+		public void movs() {
+			System.out.printf("인간형 유닛의 %d로 이동합니다", speed);
+		}
+	}
+
+	public void gethit() {
+
+		MemberInner1 inner = new MemberInner1();
+		inner.move();
+	}
+}

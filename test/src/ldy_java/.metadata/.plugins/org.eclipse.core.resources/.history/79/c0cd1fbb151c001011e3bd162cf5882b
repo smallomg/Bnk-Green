@@ -1,0 +1,19 @@
+package Interface;
+
+enum Scale1 {
+	DO, RE, MI, FA, SO, RA, TI
+}
+
+public class SimpleEnumTest {
+
+	public static void main(String[] args) {
+		Scale1 sc = Scale1.DO;
+		System.out.println(sc);
+
+		switch (sc) {
+		case DO:
+			System.out.println("도");
+		}
+	}
+
+}

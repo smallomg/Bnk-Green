@@ -1,0 +1,39 @@
+package management;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import ex05.Board;
+
+public class Purchase_Sale {
+	//구매 판매
+	
+	//이미 회원이 있다 치고 
+	//
+	
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	public Purchase_Sale() {
+		conn = DBConn.getConnection();
+	}
+
+	
+	public int insert(Purchase purchase)  {
+		int result = 0;
+		String query = "INSERT INTO purchase VALUES(seq_pc_code.NEXTVAL,?,?,?,?,?,?,?)";
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setDate(1,purchase.getPc_date());
+			pstmt.setInt(2, purchase.getPc_stock());
+			pstmt.setInt(3, purchase.getPc_cost());
+			pstmt.setInt(4, purchase.getPc_total());
+		}
+		catch(SQLException e) {e.printStackTrace();}
+		return result;
+	}
+}

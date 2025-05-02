@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="RegistServlet" method="post">
+        <table border="1">
+            <tr>
+                <td>ID : <input type="text" name="id"></td>
+                <td rowspan="2"><input type="submit" value="중복확인" onclick="f()"></td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="p1">
+                </td>
+            </tr>
+
+            <tr>
+                <td>PW : <input type="password" name="pw"></td>
+            </tr>
+            <tr>
+                <td>PW 확인: <input type="password" name="pwCheck"></td>
+                <td>
+                    <p id="p2">
+                </td>
+            <tr>
+        </table>
+    </form>
+</body>
+</html>

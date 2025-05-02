@@ -1,0 +1,48 @@
+package ex11;
+
+import java.sql.Connection;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class DBconnPool {
+    private Connection conn;
+
+    public DBconnPool() {
+        try {
+            // 1. JNDI InitialContext 생성
+            Context initCtx = new InitialContext();
+            
+            // 2. java:/comp/env 로 이동
+            Context envCtx = (Context) initCtx.lookup("java:/comp/env");
+            
+            // 3. dbcp_myoracle이라는 이름의 DataSource를 찾기
+            DataSource ds = (DataSource) envCtx.lookup("dbcp_myoracle");
+            
+            // 4. 커넥션 얻기
+            conn = ds.getConnection();
+            System.out.println("DB 커넥션 풀 연결 성공!");
+
+        } catch (Exception e) {
+            System.out.println("DB 커넥션 풀 연결 실패");
+            e.printStackTrace();
+        }
+    }
+
+    // 커넥션 리턴 (다른 클래스가 conn 사용하려고)
+    public Connection getConnection() {
+        return conn;
+    }
+
+    // 커넥션 반환 메서드
+    public void close() {
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close(); // 커넥션 풀에 반환
+                System.out.println("DB 커넥션 반환 완료!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

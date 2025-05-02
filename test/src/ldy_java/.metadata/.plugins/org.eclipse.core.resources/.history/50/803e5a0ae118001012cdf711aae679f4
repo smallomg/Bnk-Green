@@ -1,0 +1,11 @@
+package jdbc;
+
+import lombok.Setter;
+import lombok.Getter;
+import lombok.Data;
+@Setter
+@Getter
+@Data
+public class A {
+	private int n;
+}

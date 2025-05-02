@@ -1,0 +1,23 @@
+package test;
+
+public class SingletonTest {
+
+	public static void main(String[] args) {
+
+		A a = A.getIntstance();
+
+		A b = A.getIntstance();
+
+		System.out.println(a == b);
+
+		A f = (A) new Object();
+		//System.out.println(a == f);
+
+		B c = new B();
+		B d = new B();
+		
+		
+		System.out.println(c == d);
+	}
+
+}

@@ -1,0 +1,48 @@
+package jdbc;
+
+import lombok.Getter;
+import lombok.Setter;
+
+//마커클래스 복제가능한 클래스
+
+@Getter
+@Setter
+public class Point implements Cloneable{
+
+	private int xPos;
+	private int yPos;
+
+	public Point(int xPos, int yPos) {
+		this.xPos = xPos;
+		this.yPos = yPos;
+	}
+
+	public void showPostion() {
+		System.out.printf("[%d, %d] ", xPos, yPos);
+		System.out.println("");
+	}
+
+	
+	
+	
+	// clone을 사용하기 위해서는 implements Cloneable
+	
+	/*
+	 * @Override protected Object clone() throws CloneNotSupportedException {
+	 * 
+	 * //Object가 갖고 있는 super return super.clone(); }
+	 */
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		Point p = (Point) super.clone();
+		//Object가 갖고 있는 super
+		return p;
+	}
+
+	public void changePos(int x1, int x2) {
+		this.xPos = x1;
+		this.yPos = x2;
+		
+	}
+
+}

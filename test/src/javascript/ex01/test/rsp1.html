@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p">여기 문장을 바꿉니다.</p>
+    <hr>
+    <img src="img/paper.jpg" id="img1">
+    <img src="img/paper.jpg" id="img2">
+    <img src="img/paper.jpg" id="img3">
+    
+    <button onclick="changeImg()">번경</button>
+    <script>
+        const p = document.getElementById("p");
+
+        const imgs = document.querySelectorAll("img");
+
+        function changeImg() {
+            imgs[0].src = "img/rock.jpg";
+            imgs[1].src = "img/sissors.jpg";
+            imgs[2].src = "img/paper.jpg";
+
+            p.innerHTML = "<h1>hello</h1>";
+        }
+
+    </script>
+</body>
+
+</html>

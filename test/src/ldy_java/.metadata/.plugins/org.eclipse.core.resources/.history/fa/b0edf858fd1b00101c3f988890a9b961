@@ -1,0 +1,23 @@
+package file;
+
+public class FinallyTest {
+
+	public static void main(String[] args) {
+
+		System.out.println("----Start----");
+
+		// 해야할 일(기능)
+		try {
+			String s = null;
+			System.out.println(s.charAt(0));
+		}
+		// 문제가 생기면 ... 문제가 생겼다고 알려주고 ... 프로그램을 지속해야 한다.
+		catch (NullPointerException e) {
+			System.out.println("s에 문자열이 담겨있지 않습니다.");
+			
+		}
+		System.out.println("----End----");
+
+	}
+
+}

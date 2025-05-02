@@ -1,0 +1,9 @@
+package ex10;
+
+public class SignUp {
+	
+	private String id;
+	private String pw;
+	private String name;
+	private String grade;
+}

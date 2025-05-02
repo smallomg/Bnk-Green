@@ -1,0 +1,12 @@
+package Interface;
+
+public class Day2Test {
+
+	public static void main(String[] args) {
+
+		for(Day2 day2 : Day2.values()) {
+			System.out.println(day2 + "\t\t:"+day2.getKorName()+"\t,"+day2.getEngName());
+		}
+	}
+
+}
