@@ -1,0 +1,19 @@
+// mybatis 데이터베이스의 프레임워크
+
+mybatis 의 특징
+1. 인터페이스 만들기
+		이름			controller 	방식(GET, POST)	파라미터			끝나고 어디로?	방식		컨트롤러에서 의 매개변수
+C 회원등록폼 페이지(regMemberForm.jsp), "/regMemberForm" 	GET					"/regist"
+   회원 등록 처리			     "/regist"		POST		id:String 			"/list"		redirect
+									pw: String 
+									name:String 	
+									phone:String
+									grade:String		
+
+R 목록보기페이지(memberList.jsp)		"/list"		GET									Model	List<MemberDTO>
+U 상세보기페이지(detail.jsp)			"/detail"		GET		id:String			"/detail"				Model 	MemberDTO
+	업데이트 처리			"/modify"		POST		아이디 제외하고 다		"/list"		redirect
+D 상세보기페이지(detail.jsp)			"/detail"		GET		id:String 			"/detail"				Model 	MemberDTO
+	삭제 처리				"/delete"		GET		id:String			"/list"		redirect
+
+상세보기에 수정버튼과 삭제버튼이 있음
